@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+  <head>
+  
+  <style type="text/css">
+    body {
+      font: 12pt Georgia, "Times New Roman", Times, serif;
+      line-height: 1.3;
+      /* min-height: 300vh;
+  position: relative;
+  margin: 0; */
+    }
+
+   
+
+    div.footer {
+    
+      display: block;
+      text-align: center;
+      position: running(footer);
+     
+    }
+#footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#footer p {
+  border-top: 2px solid #555555;
+  margin-top:10px;
+}
+  
+    @page {
+        @bottom-center {
+            content: element(footer);
+        }
+    }
+    #background{
+    padding-left: 245px;
+    position: absolute;
+    
+    /* z-index: 0; */
+    background: white;
+    backgroung-position: center;
+    display: block;
+    /* min-height: 50%; */
+    /* min-width: 50%; */
+    color: yellow;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 271px;
+    
+}
+#background1{
+    padding-top:-100px;
+    position: absolute;
+    
+    /* z-index: 0; */
+    background: white;
+    backgroung-position: center;
+    display: block;
+    /* min-height: 50%; */
+    /* min-width: 50%; */
+    color: yellow;
+    margin-left:200px;
+   
+    
+}
+#content{
+    position: absolute;
+    z-index:10;
+}
+
+#bg-text
+{
+    color:lightgrey;
+    font-size:120px;
+    transform:rotate(300deg);
+    -webkit-transform:rotate(300deg);
+    opacity:0.5;
+      z-index: 9999;
+    
+}
+
+  
+                
+  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <h3 style="text-align : center;">
+      <img style="float: right;"  th:src="@{${'https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/'+pdf20Entry.stateCode+'_police.jpg'}}" alt="" width="91" height="84" /><img style="float: left;" src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/eDAR_logo1.png" alt="" width="91" height="84" />
+      <u>FORM - XX<br/>
+        FORMAT FOR THE INFORMATION OF MACT</u>
+    </h3>
+    <br/>
+    <h3>STAGE - I : ACCIDENT DETAILS (to be submitted by Investigating Officer within 90 days)</h3>
+    <table style="border-collapse: collapse; width: 100%;" border="1">
+      <tbody>
+      <tr>
+      <td style="width: 10%;" colspan="2">&nbsp;<strong>PARTICULARS </strong></td>
+      <td style="width: 10%;" colspan="8">&nbsp;<strong>DETAILS </strong></td>
+      </tr>
+      <tr>
+      <td style="width: 10%;" colspan="2">&nbsp;<strong>Accident Details: </strong></td>
+      <td style="width: 10%;" colspan="8">&nbsp;</td>
+      </tr>
+      <tr>
+      <td style="width: 10%;" colspan="2">&nbsp;&nbsp;&nbsp;Date of accident</td>
+      <td style="width: 10%;" colspan="8">&nbsp;<span th:text="${pdf20Entry.dateOfAccident}"></span></td>
+      </tr>
+      <tr>
+      <td style="width: 10%;" colspan="2">&nbsp;&nbsp;&nbsp;Place of accident</td>
+      <td style="width: 10%;" colspan="8">&nbsp;<span th:text="${pdf20Entry.landMark}"></span><br>
+      <span th:text="${pdf20Entry.placeOfAccident}"></span></td>
+      </tr>
+      <tr>
+      <td style="width: 10%;" colspan="2">&nbsp;<strong>Case registered at: </strong></td>
+      <td style="width: 10%;" colspan="8">&nbsp;</td>
+      </tr>
+      <tr>
+      <td style="width: 10%;" colspan="2">&nbsp;&nbsp;&nbsp;P.S.</td>
+      <td style="width: 10%; text-transform:capitalize;" colspan="8">&nbsp;<span style="text-transform: lowercase;" th:text="${pdf20Entry.psName}"></span></td>
+      </tr>
+      <tr>
+      <td style="width: 10%;" colspan="2">&nbsp;&nbsp;&nbsp;District</td>
+      <td style="width: 10%; text-transform:capitalize;" colspan="8">&nbsp;<span style="text-transform: lowercase;" th:text="${pdf20Entry.district}"></span></td>
+      </tr>
+      <tr>
+      <td style="width: 10%;" colspan="2">&nbsp;&nbsp;&nbsp;State, PIN</td>
+      <td style="width: 10%; text-transform:capitalize;" colspan="8">&nbsp;<span style="text-transform: lowercase;" th:text="${pdf20Entry.state}"></span></td>
+      </tr>
+      <tr>
+      <td style="width: 10%;" colspan="2">&nbsp;<strong>I.O. Particulars:</strong></td>
+      <td style="width: 10%;" colspan="8">&nbsp;</td>
+      </tr>
+      <tr>
+      <td style="width: 10%;" colspan="2">&nbsp;&nbsp;&nbsp;<!--<span> th:text=""></span>-->Phone</td>
+      <td style="width: 10%;" colspan="8">&nbsp;</td>
+      </tr>
+      <tr>
+      <td style="width: 10%;" colspan="2">&nbsp;&nbsp;&nbsp;Address</td>
+      <td style="width: 10%;" colspan="8">&nbsp;<!--<span> th:text=""></span>--></td>
+      </tr>
+      <tr>
+      <td style="width: 10%;" colspan="2">&nbsp;&nbsp;&nbsp;Mail</td>
+      <td style="width: 10%;" colspan="8">&nbsp;<!--<span> th:text=""></span>--></td>
+      </tr>
+      <tr>
+        <td style="width: 10%;" colspan="2">&nbsp;<strong>Final Report date:</strong></td>
+      <td style="width: 10%;" colspan="8">&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="width: 10%;" colspan="2">&nbsp;<strong>Victims:</strong></td>
+      <td style="width: 10%;" colspan="8">&nbsp;</td>
+      </tr>
+      <tr>
+      <td style="width: 10%;" colspan="2">&nbsp;&nbsp;&nbsp;Casualties</td>
+      <td style="width: 10%;" colspan="8">&nbsp;<!--<span> th:text=""></span>--></td>
+      </tr>
+      <tr>
+      <td style="width: 10%;" colspan="2">&nbsp;&nbsp;&nbsp;Injuries (other than 
+      casualty)</td>
+      <td style="width: 10%;" colspan="8"><!--<span> th:text=""></span>--></td>
+      </tr>
+      <tr>
+        <td style="width: 10%;" colspan="2">&nbsp;<strong>Hospitals Involved:</strong></td>
+      <td style="width: 10%;" colspan="8">&nbsp;</td>
+      </tr>
+      <tr>
+      <td style="width: 10%;" colspan="2">&nbsp;&nbsp;&nbsp;Name</td>
+      <td style="width: 10%;" colspan="2">&nbsp;<!--<span> th:text=""></span>--></td>
+      <td style="width: 10%;" colspan="2">&nbsp;<!--<span> th:text=""></span>--></td>
+      <td style="width: 10%;" colspan="2">&nbsp;<!--<span> th:text=""></span>--></td>
+      <td style="width: 10%;" colspan="2">&nbsp;<!--<span> th:text=""></span>--></td>
+      </tr>
+      <tr>
+      <td style="width: 10%;" colspan="2">&nbsp;&nbsp;&nbsp;Details</td>
+      <td style="width: 10%;" colspan="2">&nbsp;<!--<span> th:text=""></span>--></td>
+      <td style="width: 10%;" colspan="2">&nbsp;<!--<span> th:text=""></span>--></td>
+      <td style="width: 10%;" colspan="2">&nbsp;<!--<span> th:text=""></span>--></td>
+      <td style="width: 10%;" colspan="2">&nbsp;<!--<span> th:text=""></span>--></td>
+      </tr>
+      </tbody>
+     <div class="footer">
+e-DAR  Detailed Accident Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Date of Generation&nbsp;<span th:text="${pdf20Entry.currentDate}"></span>
+  </div>
+      </table>
+      <br/>
+      <h3>VEHICLE DETAILS</h3>
+      <table style="border-collapse: collapse; width: 100%; height: 108px;" border="1">
+        <tbody>
+        <tr style="height: 18px;">
+        <td style="width: 20%; height: 18px;"><strong>Vehicles involved </strong></td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        </tr>
+        <tr style="height: 18px;">
+        <td style="width: 20%; height: 18px;"><strong>Corresponding owner(s) of vehicles</strong></td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        </tr>
+        <tr style="height: 18px;">
+        <td style="width: 20%; height: 18px;"><strong>Corresponding driver of the vehicles </strong></td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        </tr>
+        <tr style="height: 18px;">
+        <td style="width: 20%; height: 18px;"><strong>Insurance agencies: </strong></td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        </tr>
+        <tr style="height: 18px;">
+        <td style="width: 20%; height: 18px;">&nbsp;&nbsp;&nbsp;Name of Representative</td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        </tr>
+        <tr style="height: 18px;">
+        <td style="width: 20%; height: 18px;">&nbsp;&nbsp;&nbsp;Contact details</td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+        </tr>
+        </tbody>
+      <div class="footer">
+e-DAR  Detailed Accident Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Date of Generation&nbsp;<span th:text="${pdf20Entry.currentDate}"></span>
+  </div>
+        </table>
+        <br/>
+        <h3>STAGE - II : CLAIM DETAILS (to be provided by MACT)</h3>
+        <br/>
+        <table style="border-collapse: collapse; width: 100%; height: 360px;" border="1">
+          <tbody>
+          <tr style="height: 18px;">
+          <td style="width: 20%; height: 18px;"><strong>&nbsp;PARTICULARS</strong></td>
+          <td style="width: 20%; height: 18px;" colspan="4"><strong>DETAILS</strong></td>
+          </tr>
+          <tr style="height: 36px;">
+          <td style="width: 20%; height: 36px;"><strong>&nbsp;MACT case number </strong></td>
+          <td style="width: 20%; height: 36px;" colspan="4">&nbsp;<em>(to be allocated by respective MACT)</em></td>
+          </tr>
+          <tr style="height: 18px;">
+          <td style="width: 20%; height: 18px;"><strong>&nbsp;Claim petition: </strong></td>
+          <td style="width: 20%; height: 18px;" colspan="4">&nbsp;</td>
+          </tr>
+          <tr style="height: 18px;">
+          <td style="width: 20%; height: 18px;">&nbsp;&nbsp;&nbsp;Number</td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          </tr>
+          <tr style="height: 18px;">
+          <td style="width: 20%; height: 18px;">&nbsp;&nbsp;&nbsp;Date</td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          </tr>
+          <tr style="height: 18px;">
+          <td style="width: 20%; height: 18px;">&nbsp;&nbsp;&nbsp;Place of filing</td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          </tr>
+          <tr style="height: 18px;">
+          <td style="width: 20%; height: 18px;"><strong>&nbsp;Claimant:</strong></td>
+          <td style="width: 20%; height: 18px;" colspan="4">&nbsp;</td>
+          </tr>
+          <tr style="height: 18px;">
+          <td style="width: 20%; height: 18px;">&nbsp;&nbsp;&nbsp;Name</td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          </tr>
+          <tr style="height: 18px;">
+          <td style="width: 20%; height: 18px;">&nbsp;&nbsp;&nbsp;Address(es)</td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          </tr>
+          <tr style="height: 18px;">
+          <td style="width: 20%; height: 18px;">&nbsp;&nbsp;&nbsp;Contact</td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          </tr>
+          <tr style="height: 18px;">
+          <td style="width: 20%; height: 18px;">&nbsp;&nbsp;&nbsp;Relationship with victim(s)</td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          </tr>
+          <tr style="height: 18px;">
+          <td style="width: 20%; height: 18px;">&nbsp;&nbsp;&nbsp;Aadhaar</td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          </tr>
+          <tr style="height: 18px;">
+          <td style="width: 20%; height: 18px;"><strong>&nbsp;&nbsp;&nbsp;Advocate representing the Claimant</strong></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          </tr>
+          <tr style="height: 18px;">
+          <td style="width: 20%; height: 18px;">&nbsp;&nbsp;&nbsp;Name</td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          </tr>
+          <tr style="height: 18px;">
+          <td style="width: 20%; height: 18px;">&nbsp;&nbsp;&nbsp;Phone No.</td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          </tr>
+          <tr style="height: 18px;">
+          <td style="width: 20%; height: 18px;">&nbsp;&nbsp;&nbsp;Enrollment No.</td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          </tr>
+          <tr style="height: 18px;">
+          <td style="width: 20%; height: 18px;">&nbsp;&nbsp;&nbsp;Email ID</td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          </tr>
+          <tr style="height: 18px;">
+          <td style="width: 20%; height: 18px;">&nbsp;<strong>MACT Award (Date, Particulars):</strong></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          </tr>
+          <tr style="height: 18px;">
+          <td style="width: 20%; height: 18px;">&nbsp;<strong>Claim Disbursement Details</strong></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%; height: 18px;">&nbsp;<!--<span> th:text=""></span>--></td>
+          </tr>
+          <tr>
+          <td style="width: 20%;">&nbsp;<strong>Appeal filed, if any:</strong></td>
+          <td style="width: 20%;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%;">&nbsp;<!--<span> th:text=""></span>--></td>
+          <td style="width: 20%;">&nbsp;<!--<span> th:text=""></span>--></td>
+          </tr>
+          </tbody>
+       <div class="footer">
+e-DAR  Detailed Accident Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Date of Generation&nbsp;<span th:text="${pdf20Entry.currentDate}"></span>
+  </div>
+        </table>
+          <br/>
+          <h3>CRIMINAL CASE DETAILS (to be provided by Magistrate Court)</h3>
+          <table style="border-collapse: collapse; width: 100%;" border="1">
+            <tbody>
+            <tr>
+            <td style="width: 16.6667%;" colspan="2"><strong>PARTICULARS</strong></td>
+            <td style="width: 16.6667%; text-align: center;" colspan="4">&nbsp;<strong>DETAILS</strong></td>
+            </tr>
+            <tr>
+            <td style="width: 16.6667%;" colspan="2">&nbsp;Case number</td>
+            <td style="width: 16.6667%;">&nbsp;<!--<span> th:text=""></span>--></td>
+            <td style="width: 16.6667%;">&nbsp;<!--<span> th:text=""></span>--></td>
+            <td style="width: 16.6667%;">&nbsp;<!--<span> th:text=""></span>--></td>
+            <td style="width: 16.6667%;">&nbsp;<!--<span> th:text=""></span>--></td>
+            </tr>
+            <tr>
+            <td style="width: 16.6667%;" colspan="2">&nbsp;FIR Number</td>
+            <td style="width: 16.6667%;">&nbsp;<span th:text="${pdf20Entry.firNumber}"></span></td>
+            <td style="width: 16.6667%;">&nbsp;<!--<span> th:text=""></span>--></td>
+            <td style="width: 16.6667%;">&nbsp;<!--<span> th:text=""></span>--></td>
+            <td style="width: 16.6667%;">&nbsp;<!--<span> th:text=""></span>--></td>
+            </tr>
+            <tr>
+            <td style="width: 16.6667%;" colspan="2">&nbsp;Date of Reporting</td>
+            <td style="width: 16.6667%;">&nbsp;<!--<span> th:text=""></span>--></td>
+            <td style="width: 16.6667%;">&nbsp;<!--<span> th:text=""></span>--></td>
+            <td style="width: 16.6667%;">&nbsp;<!--<span> th:text=""></span>--></td>
+            <td style="width: 16.6667%;">&nbsp;<!--<span> th:text=""></span>--></td>
+            </tr>
+            <tr>
+            <td style="width: 16.6667%;" colspan="2">&nbsp;IPC Section No.</td>
+            <td style="width: 16.6667%;">&nbsp;<!--<span> th:text=""></span>--></td>
+            <td style="width: 16.6667%;">&nbsp;<!--<span> th:text=""></span>--></td>
+            <td style="width: 16.6667%;">&nbsp;<!--<span> th:text=""></span>--></td>
+            <td style="width: 16.6667%;">&nbsp;<!--<span> th:text=""></span>--></td>
+            </tr>
+            </tbody>
+          <div class="footer">
+e-DAR  Detailed Accident Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Date of Generation&nbsp;<span th:text="${pdf20Entry.currentDate}"></span>
+  </div>
+          </table>
+            <br/>
+            <!-- <div style="text-align: right;">
+              [F. No RT-11036/64/2019-MVl (Part 3)]<br/>
+              AMIT VARADAN, Jt. Secy.<br/>
+            </div>
+            <strong>Note. - </strong> The principal rules were published in the Gazette of India, Extraordinary, Part-II, Section 3, Sub-section (i), vide notification number G.S.R. 590(E), dated the 2nd June, 1989 and last amended vide notification number G.S.R. 161(E), Dated, the 25th February, 2022. -->
+  </body>
+</html>

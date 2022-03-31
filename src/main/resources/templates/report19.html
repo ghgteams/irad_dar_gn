@@ -1,0 +1,211 @@
+
+<html>
+<head>
+<style type="text/css">
+    body {
+      font: 12pt Georgia, "Times New Roman", Times, serif;
+      line-height: 1.3;
+      /* min-height: 300vh;
+  position: relative;
+  margin: 0; */
+    }
+
+   
+
+    div.footer {
+    
+      display: block;
+      text-align: center;
+      position: running(footer);
+     
+    }
+
+  
+    @page {
+        @bottom-center {
+            content: element(footer);
+        }
+    }
+    #background{
+    padding-left: 245px;
+    position: absolute;
+    
+    /* z-index: 0; */
+    background: white;
+    backgroung-position: center;
+    display: block;
+    /* min-height: 50%; */
+    /* min-width: 50%; */
+    color: yellow;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 271px;
+    
+}
+
+#content{
+    position: absolute;
+    z-index:10;
+}
+
+#bg-text
+{
+    color:lightgrey;
+    font-size:120px;
+    transform:rotate(300deg);
+    -webkit-transform:rotate(300deg);
+    opacity:0.5;
+      z-index: 9999;
+    
+}
+
+  
+                
+  </style>
+  <body class="watermark">
+	<div id="background">
+  <p id="bg-text">e-DAR</p>
+	</div>
+  </head><table style="border-collapse: collapse; width: 100%; height: 32px; margin-left: auto; margin-right: auto;" border="0">
+<tbody>
+<tr style="height: 32px;">
+<td style="width: 100%; height: 32px; text-align: center;">
+<p><strong>FORM &ndash; XIX
+<img style="float: right;"  th:src="@{${'https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/'+pdf19Entry.stateCode+'_police.jpg'}}" alt="" width="91" height="84" /><img style="float: left;" src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/eDAR_logo1.png" alt="" width="91" height="84" />
+</strong></p>
+<p><strong>MOTOR ACCIDENT CLAIMS ANNUITY DEPOSIT (MACAD) SCHEME</strong></p>
+<p><strong>Accident Id -<span th:text="${pdf19Entry.accidentId}"></span></strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table style="border-collapse: collapse; width: 100%; height: 233px; margin-left: auto; margin-right: auto;" border="1">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; text-align: center; height: 18px;"><strong>S.NO</strong></td>
+<td style="width: 34.5707%; text-align: center; height: 18px;"><strong>Scheme Features </strong></td>
+<td style="width: 60.3299%; height: 18px; text-align: center;"><strong>Particulars/Details </strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">1.</td>
+<td style="width: 34.5707%; height: 18px;">Purpose</td>
+<td style="width: 60.3299%; height: 18px;">&nbsp;&nbsp;&nbsp;One time lump sum amount, as decided by the Court / Tribunal,deposited to receive the same in Equated Monthly Installments (EMIs), comprising a part of the principal amount as well as interest</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">2.</td>
+<td style="width: 34.5707%; height: 18px;">Eligibility</td>
+<td style="width: 60.3299%; height: 18px;">&nbsp;&nbsp;&nbsp;Individuals including Minors through guardian in single name.</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">3.</td>
+<td style="width: 34.5707%; height: 18px;">Mode of Holding</td>
+<td style="width: 60.3299%; height: 18px;">&nbsp;&nbsp;&nbsp;Singly</td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 5.09933%; height: 17px;">4.</td>
+<td style="width: 34.5707%; height: 17px;">Type of account</td>
+<td style="width: 60.3299%; height: 17px;">&nbsp;&nbsp;&nbsp;Motor Accident Claims Annuity (Term) Deposit Account (MACAD)</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">5.</td>
+<td style="width: 34.5707%; height: 18px;">Deposit Amount</td>
+<td style="width: 60.3299%; height: 18px;">
+<ol>
+<li>Maximum: No Limit</li>
+<li>Minimum &ndash; Based on minimum monthly annuity Rs. 1,000/-for the relevant period.</li>
+</ol>
+</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">6.</td>
+<td style="width: 34.5707%; height: 18px;">Tenure</td>
+<td style="width: 60.3299%; height: 18px;">
+<ol>
+<li>36 to 120 months</li>
+<li>
+<p>In case the period is less than 36 months, normal FD will be opened</p>
+</li>
+<li>
+<p>MACAD for longer period (more than 120 months) will be looked as per direction of the Court</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">7.</td>
+<td style="width: 34.5707%; height: 18px;">Rate of interest</td>
+<td style="width: 60.3299%; height: 18px;">&nbsp;&nbsp;&nbsp;Prevailing rate of interest as per Tenure.</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">8.</td>
+<td style="width: 34.5707%; height: 18px;">Receipts/Advices</td>
+<td style="width: 60.3299%; height: 18px;">
+<ol>
+<li>No Receipts will be issued to depositors.</li>
+<li>
+<p>Passbook will be issued for MACAD</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">&nbsp;9.</td>
+<td style="width: 34.5707%; height: 18px;">Loan Facility</td>
+<td style="width: 60.3299%; height: 18px;">&nbsp;&nbsp;&nbsp;No loan or advances shall be allowed</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">10.</td>
+<td style="width: 34.5707%; height: 18px;">Nomination facility</td>
+<td style="width: 60.3299%; height: 18px;">
+<ol>
+<li>Available.</li>
+<li>MACAD shall be duly nominated as directed by the court</li>
+</ol>
+</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">11.</td>
+<td style="width: 34.5707%; height: 18px;">Premature Payment</td>
+<td style="width: 60.3299%; height: 18px;">
+<ol>
+<li>Premature closure or part lump sum payment of MACAD during the life of the claimant will be made with permission of the court. However, if permitted, the annuity part will be reissued for balance tenure and amount, if any, with change in annuity amount.</li>
+<li>
+<p>Premature closure penalty will not be charged.</p>
+</li>
+<li>
+<p>In case of death of the claimant, payment to be given to the nominee. The nominee has an option to continue with the annuity or seek pre-closure.</p>
+</li>
+</ol>
+</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">12.</td>
+<td style="width: 34.5707%; height: 18px;">Date of release of the award amount to the Claimant(s)</td>
+<td style="width: 60.3299%; height: 18px;">
+<ol>
+<li>
+<p>Interest payment is subject to TDS as per Income Tax Rules. Form 15G/15H can be submitted by the Depositor to get exemption from the Tax deduction.</p>
+</li>
+<li>
+<p>The annuity amount on monthly basis net of TDS, will be credited to the MACT Savings Bank account</p>
+</li>
+</ol>
+</td>
+</tr>
+<!-- <tr>
+<td style="width: 5.09933%;" colspan="3">
+<p style="text-align: right;">[F. No RT-11036/64/2019-MVl (Part 2)]</p>
+<p style="text-align: right;">AMIT VARADAN, Jt. Secy</p>
+<p><strong>Note : </strong>The principal rules were published in the Gazette of India, Extraordinary, Part-II, Section 3, Sub-section</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;(i), <em>vide </em>notification number G.S.R. 590(E), dated the 2nd June, 1989 and lastly amended <em>vide </em>notification number G.S.R. &hellip;&hellip;&hellip;&hellip;. (E), Dated &hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</p>
+</td>
+</tr> -->
+</tbody>
+<div class="footer">
+e-DAR  Detailed Accident Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Date of Generation&nbsp;<span th:text="${pdf19Entry.currentDate}"></span>
+  </div>
+</table>
+</html>

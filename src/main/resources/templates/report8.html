@@ -1,0 +1,199 @@
+<html>
+<head>
+<style type="text/css">
+    body {
+      font: 12pt Georgia, "Times New Roman", Times, serif;
+      line-height: 1.3;
+      /* min-height: 300vh;
+  position: relative;
+  margin: 0; */
+    }
+
+   
+
+    div.footer {
+    
+      display: block;
+      text-align: center;
+      position: running(footer);
+     
+    }
+
+  
+    @page {
+        @bottom-center {
+            content: element(footer);
+        }
+    }
+    #background{
+    padding-left: 245px;
+    position: absolute;
+    
+    /* z-index: 0; */
+    background: white;
+    backgroung-position: center;
+    display: block;
+    /* min-height: 50%; */
+    /* min-width: 50%; */
+    color: yellow;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 271px;
+    
+}
+
+#content{
+    position: absolute;
+    z-index:10;
+}
+
+#bg-text
+{
+    color:lightgrey;
+    font-size:120px;
+    transform:rotate(300deg);
+    -webkit-transform:rotate(300deg);
+    opacity:0.5;
+      z-index: 9999;
+    
+}          
+ </style>
+ <body class="watermark">
+<div id="background">
+<p id="bg-text">e-DAR</p>
+</div>
+ </head>
+<body>
+<table style="border-collapse: collapse; width:100%; height: 32px; margin-left: auto; margin-right: auto;" border="0">
+<tbody>
+<tr style="height: 32px;">
+<td style="width: 100%; height: 32px; text-align: center;">
+<p><strong>FORM-VIII&nbsp;
+<img style="float: right;"  th:src="@{${'https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/'+pdf8Entry.stateCode+'_police.jpg'}}" alt="" width="91" height="84" /><img style="float: left;" src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/eDAR_logo1.png" alt="" width="91" height="84" />
+</strong></p>
+<p><strong>Accident Id - <span th:text="${pdf8Entry.accidentId}"></span></strong></p>
+<h3>SITE PLAN</h3>
+<p>By Investigating Officer to Claims Tribunal Along with DAR within 90 days of Accident</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table style="border-collapse: collapse; width: 100%; height: 78px; margin-left: auto; margin-right: auto;" border="1">
+<tbody>
+<tr style="height: 27px;">
+<td style="width: 23.2026%; height: 27px;">FIR No.</td>
+<td style="width: 76.7974%; height: 27px;text-transform: uppercase ;">&nbsp;&nbsp;<span th:text="${pdf8Entry.firNumber}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 23.2026%; height: 17px;">Date</td>
+<td style="width: 76.7974%; height: 17px;text-transform: uppercase ;">&nbsp;<span th:text="${pdf8Entry.firDateTime}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 23.2026%; height: 17px;">Under Section</td>
+<td style="width: 76.7974%; height: 17px;text-transform: capitalize ;">&nbsp;&nbsp;<span th:text="${pdf8Entry.act}"></span><br><span th:text="${pdf8Entry.section}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 23.2026%; height: 17px;">Police Station</td>
+<td style="width: 76.7974%; height: 17px;text-transform: capitalize ;">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf8Entry.psName}"></span>,<span style="text-transform: lowercase;" th:text="${pdf8Entry.district}"></span>,<span style="text-transform: lowercase;" th:text="${pdf8Entry.state}"></span></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table style="border-collapse: collapse; width: 100%; height: 32px; margin-left: auto; margin-right: auto;" border="1">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 3.16302%; height: 18px;">1.</td>
+<td style="width: 40.2676%; height: 18px;">Date of preparation of site plan</td>
+<td style="width: 56.5693%; height: 18px; text-transform: capitalize;">&nbsp;&nbsp;<span th:text="${pdf8Entry.sitePlanDate}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.16302%; height: 18px;">2.</td>
+<td style="width: 40.2676%; height: 18px;">Type of collision
+<p>(collision from)</p>
+</td>
+<td style="width: 56.5693%; height: 18px; text-transform: capitalize;">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf8Entry.collisionNature}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.16302%; height: 18px;">3.</td>
+<td style="width: 40.2676%; height: 18px;">Road direction</td>
+<td style="width: 56.5693%; height: 18px; text-transform: capitalize;">&nbsp;&nbsp;<span th:text="${pdf8Entry.trafficMovement}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.16302%; height: 18px;">4.</td>
+<td style="width: 40.2676%; height: 18px;">No. of lanes</td>
+<td style="width: 56.5693%; height: 18px; text-transform: capitalize;">&nbsp;&nbsp;<span th:text="${pdf8Entry.noOfLanes}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.16302%; height: 18px;">5.</td>
+<td style="width: 40.2676%; height: 18px;">Width of road (Meters)</td>
+<td style="width: 56.5693%; height: 18px; text-transform: capitalize;">&nbsp;&nbsp;<span th:text="${pdf8Entry.vehiclewidth}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.16302%; height: 18px;">6.</td>
+<td style="width: 40.2676%; height: 18px;">Place of accident</td>
+<td style="width: 56.5693%; height: 18px; text-transform: capitalize;">&nbsp;&nbsp;<span style="text-transform: lowercase;"th:text="${pdf8Entry.landmarks}"></span>&nbsp; / &nbsp;<span th:text="${pdf8Entry.roadDetails}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.16302%; height: 18px;">7.</td>
+<td style="height: 18px;" colspan="2">
+<p>Detailed Site Plan with road and junction name, direction and location of vehicle(s) on the road</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Accident Description:</strong><span th:text="${pdf8Entry.sitePlanDescription}"></span></p>
+<div style="width:100%;text-align:center;"><img src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/accmedia/image.php?id=202229592390040" alt="Attached" width="70%" height="25%"/></div>
+<!-- <span><img src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/accmedia/image.php?id="+"${pdf8Entry.sitePlanImage}+" alt="Attached"/></span> -->
+<!-- <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf8Entry.roadDetails}"></span></p><br> -->
+
+</td>
+</tr>
+
+</tbody>
+<div class="footer">  
+e-DAR  Detailed Accident Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Date of Generation&nbsp;<span th:text="${pdf8Entry.currentDate}"></span>
+</div>
+</table><br>
+ 	
+<table style="border-collapse: collapse; width: 100%; height: 109px;" border="0">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 100%; height: 18px;text-align: right;" colspan="10"></td>
+</tr>
+<!-- <tr style="height: 18px;">
+<td style="width: 10%; height: 18px;text-align: right;" colspan="10">&nbsp;</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px;" colspan="10">&nbsp;</td>
+</tr> -->
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px; text-align:right" colspan="8"><strong>&nbsp;Signature&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;" colspan="2"></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px; text-align:right" colspan="8"><strong>&nbsp;Name&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;" colspan="2"><span th:text="${pdf8Entry.shoName}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px; text-align:right" colspan="8"><strong>&nbsp;Designation&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;" colspan="2"><span th:text="${pdf8Entry.shoDesignation}"></span>&nbsp;&nbsp;<strong>(S.H.O./I.O)</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width:10%; height: 18px;text-align: right;" colspan="8"><strong>P.I.S./EMPLOYEE No&nbsp;:</strong></td>
+<td style="width:10%; height: 18px;" colspan="2"><span th:text="${pdf8Entry.investigatingOfficerPis}"></span></td>
+</tr>
+<tr style="height: 19px;">
+<td style="width: 10%; height: 19px;text-align: right;"colspan="8"><strong>Phone No.&nbsp;:</strong></td>
+<td style="width: 10%; height: 19px;" colspan="2"><span th:text="${pdf8Entry.investigatingOfficerMobile}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px;text-align: right;" colspan="8"><strong>P.S.&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;text-transform: captialize;" colspan="2"><span style="text-transform: lowercase;" th:text="${pdf8Entry.psName}"></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%;text-align: right;" colspan="8"><strong>Date&nbsp;:</strong></td>
+<td style="width: 10%;" colspan="2"><span th:text="${pdf8Entry.currentDate}"></span></td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>

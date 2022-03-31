@@ -1,0 +1,173 @@
+<html>
+<head>
+<style type="text/css">
+    body {
+      font: 12pt Georgia, "Times New Roman", Times, serif;
+      line-height: 1.3;
+      /* min-height: 300vh;
+  position: relative;
+  margin: 0; */
+    }
+
+   
+
+    div.footer {
+    
+      display: block;
+      text-align: center;
+      position: running(footer);
+     
+    }
+
+  
+    @page {
+        @bottom-center {
+            content: element(footer);
+        }
+    }
+    #background{
+    padding-left: 245px;
+    position: absolute;
+    
+    /* z-index: 0; */
+    background: white;
+    backgroung-position: center;
+    display: block;
+    /* min-height: 50%; */
+    /* min-width: 50%; */
+    color: yellow;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 271px;
+    
+}
+
+#content{
+    position: absolute;
+    z-index:10;
+}
+
+#bg-text
+{
+    color:lightgrey;
+    font-size:120px;
+    transform:rotate(300deg);
+    -webkit-transform:rotate(300deg);
+    opacity:0.5;
+      z-index: 9999;
+    
+}
+
+  
+                
+  </style>
+  <body class="watermark">
+	<div id="background">
+  <p id="bg-text">e-DAR</p>
+	</div>
+  </head>
+<table style="border-collapse: collapse; width: 100%; height: 32px; margin-left: auto; margin-right: auto;" border="0">
+<tbody>
+<tr style="height: 32px;">
+<td style="width: 100%; height: 32px; text-align: center;">
+<p><strong>FORM &ndash; XVIII
+<img style="float: right;"  th:src="@{${'https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/'+pdf18Entry.stateCode+'_police.jpg'}}" alt="" width="91" height="84" /><img style="float: left;" src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/eDAR_logo1.png" alt="" width="91" height="84" />
+</strong></p>
+<p><strong>Accident Id - (<span th:text="${pdf18Entry.accident_id}"></span>)</strong></p>
+<p><strong>FORMAT OF RECORD OF AWARDS TO BE MAINTAINED BY THE CLAIMS TRIBUNAL</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+<table style="border-collapse: collapse; width: 100%; height: 287px; margin-left: auto; margin-right: auto;" border="1">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 100%; height: 18px;" colspan="3"><strong>DATE&nbsp;</strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>&nbsp; Page No.of the Register&nbsp;</strong> &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; text-align: center; height: 18px;"><strong>S.NO</strong></td>
+<td style="width: 61.1174%; text-align: center; height: 18px;"><strong>PARTICULARS</strong></td>
+<td style="width: 33.7832%; height: 18px;">&nbsp;&nbsp;</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">1.</td>
+<td style="width: 61.1174%; height: 18px;">Date of Award</td>
+<td style="width: 33.7832%; height: 18px;">&nbsp;&nbsp;&nbsp;<span th:text="${pdf18Entry.date_of_award}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">2.</td>
+<td style="width: 61.1174%; height: 18px;">Case number</td>
+<td style="width: 33.7832%; height: 18px;">&nbsp;&nbsp;&nbsp;<span th:text="${pdf18Entry.case_number}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">3.</td>
+<td style="width: 61.1174%; height: 18px;">Title of the case</td>
+<td style="width: 33.7832%; height: 18px;">&nbsp;&nbsp;&nbsp;<span th:text="${pdf18Entry.title_of_case }"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 5.09933%; height: 17px;">4.</td>
+<td style="width: 61.1174%; height: 17px;">Award amount</td>
+<td style="width: 33.7832%; height: 17px;">&nbsp;&nbsp;&nbsp;<span th:text="${pdf18Entry.award_amount}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">5.</td>
+<td style="width: 61.1174%; height: 18px;">Date of notice of deposit by the depositor to the Claimant(s)</td>
+<td style="width: 33.7832%; height: 18px;">&nbsp;&nbsp;&nbsp;<span th:text="${pdf18Entry.deposit_by_depositor}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">6.</td>
+<td style="width: 61.1174%; height: 18px;">Date of notice of deposit by the Tribunal to the Claimant(s)</td>
+<td style="width: 33.7832%; height: 18px;">&nbsp;&nbsp;&nbsp;<span th:text="${pdf18Entry.deposit_by_tribunal}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">7.</td>
+<td style="width: 61.1174%; height: 18px;">Amount of interest upto date of notice of deposit</td>
+<td style="width: 33.7832%; height: 18px;">&nbsp;&nbsp;&nbsp;<span th:text="${pdf18Entry.amount_of_interest}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">8.</td>
+<td style="width: 61.1174%; height: 18px;">Amount deposited along with date of deposit</td>
+<td style="width: 33.7832%; height: 18px;">&nbsp;&nbsp;&nbsp;<span th:text="${pdf18Entry.amount_deposited}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">9.</td>
+<td style="width: 61.1174%; height: 18px;">Amount of interest upto date of notice of deposit</td>
+<td style="width: 33.7832%; height: 18px;">&nbsp;&nbsp;&nbsp;<span th:text="${pdf18Entry.amount_of_interest}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">10.</td>
+<td style="width: 61.1174%; height: 18px;">Whether entire award amount and interest deposited. If no, balance outstanding award amount/interest</td>
+<td style="width: 33.7832%; height: 18px;">&nbsp;&nbsp;&nbsp;<span th:text="${pdf18Entry.award_amount_interest_deposited}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">11.</td>
+<td style="width: 61.1174%; height: 18px;">Action taken to recover the balance award interest</td>
+<td style="width: 33.7832%; height: 18px;">&nbsp;&nbsp;&nbsp;<span th:text="${pdf18Entry.action_recover_award_interest}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">12.</td>
+<td style="width: 61.1174%; height: 18px;">Date of release of the award amount to the Claimant(s)</td>
+<td style="width: 33.7832%; height: 18px;">&nbsp;&nbsp;&nbsp;<span th:text="${pdf18Entry.release_award_amount_claimnant}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">13.</td>
+<td style="width: 61.1174%; height: 18px;">
+<p>Mode of release of the award amount:</p>
+<p>(Give the details of endorsement made on the cheques)</p>
+</td>
+<td style="width: 33.7832%; height: 18px;">&nbsp;&nbsp;&nbsp;<span th:text="${pdf18Entry.mode_of_release_award_amount}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.09933%; height: 18px;">14.</td>
+<td style="width: 61.1174%; height: 18px;">Remarks</td>
+<td style="width: 33.7832%; height: 18px;">&nbsp;&nbsp;&nbsp;<span th:text="${pdf18Entry.remarks}"></span></td>
+</tr>
+</tbody>
+<div class="footer">
+e-DAR  Detailed Accident Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Date of Generation&nbsp;<span th:text="${pdf18Entry.currentDate}"></span>
+  </div>
+</table>
+</html>

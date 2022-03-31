@@ -1,0 +1,520 @@
+<html>
+<head>
+<style type="text/css">
+    body {
+      font: 12pt Georgia, "Times New Roman", Times, serif;
+      line-height: 1.3;
+      /* min-height: 300vh;
+  position: relative;
+  margin: 0; */
+    }
+
+   
+
+    div.footer {
+    
+      display: block;
+      text-align: center;
+      position: running(footer);
+     
+    }
+
+  
+    @page {
+        @bottom-center {
+            content: element(footer);
+        }
+    }
+    #background{
+    padding-left: 245px;
+    position: absolute;
+    
+    /* z-index: 0; */
+    background: white;
+    backgroung-position: center;
+    display: block;
+    /* min-height: 50%; */
+    /* min-width: 50%; */
+    color: yellow;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 271px;
+    
+}
+
+#content{
+    position: absolute;
+    z-index:10;
+}
+
+#bg-text
+{
+    color:lightgrey;
+    font-size:120px;
+    transform:rotate(300deg);
+    -webkit-transform:rotate(300deg);
+    opacity:0.5;
+      z-index: 9999;
+    
+}
+
+  
+                
+  </style>
+  <body class="watermark">
+	<div id="background">
+  <p id="bg-text">e-DAR</p>
+	</div>
+  </head>
+<body onLoad="sss();">
+<table style="border-collapse: collapse; width: 100%; height: 32px; margin-left: auto; margin-right: auto;" border="0">
+<tbody>
+<tr style="height: 32px;">
+<td style="width: 100%; height: 32px; text-align: center;">
+<p><strong>FORM-VII&nbsp;
+<img style="float: right;"  th:src="@{${'https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/'+pdf7Entry.stateCode+'_police.jpg'}}" alt="" width="91" height="84" /><img style="float: left;" src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/eDAR_logo1.png" alt="" width="91" height="84" />
+</strong></p>
+<p><strong>Accident Id - <span th:text="${pdf7Entry.accidentId}"></span></strong></p>
+<p><strong>DETAILED ACCIDENT REPORT (DAR)</strong></p>
+<p>By Investigating Officer to Claims Tribunal within 90 days of Accident</br>
+ Copy to Victim(s), Driver, Owner, Insurance Company and SLSA</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table style="border-collapse: collapse; width: 100%; height: 78px; margin-left: auto; margin-right: auto;" border="1">
+<tbody>
+<tr style="height: 27px;">
+<td style="width: 23.2026%; height: 27px;">FIR No.</td>
+<td style="width: 76.7974%; height: 27px;text-transform: uppercase ;">&nbsp;&nbsp;<span th:text="${pdf7Entry.firNumber}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 23.2026%; height: 17px;">Date</td>
+<td style="width: 76.7974%; height: 17px;text-transform: uppercase ;">&nbsp;&nbsp;<span th:text="${pdf7Entry.firDateTime}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 23.2026%; height: 17px;">Under Section</td>
+<td style="width: 76.7974%; height: 17px;text-transform: capitalize ;">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf7Entry.act}"></span><br>
+<span style="text-transform: lowercase;" th:text="${pdf7Entry.section}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 23.2026%; height: 17px;">Police Station</td>
+<td style="width: 76.7974%; height: 17px;text-transform: capitalize ;">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf7Entry.psName}"></span>,<span style="text-transform: lowercase;" th:text="${pdf7Entry.district}"></span>,<span style="text-transform: lowercase;" th:text="${pdf7Entry.state}"></span></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+
+
+
+<table style="border-collapse: collapse; width: 100%; height: auto;" border="1">
+<tbody>
+
+<!-- <div class="header">
+ <IMG width="40%" height="40%"  content="iRAD">
+  </div> 
+ -->
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 17px;">1.</td>
+<td style="height: 17px; width: 38.0633%;" colspan="2">Date of Accident</td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.dateTime}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 17px;">2.</td>
+<td style="height: 17px; width: 38.0633%;" colspan="2">Time of Accident</td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.timeOfTheDay}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 17px;">3.</td>
+<td style="height: 17px; width: 38.0633%;" colspan="2">Place of Accident</td>
+<td style="width: 60.6958%; height: 17px;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.landmarks}"></span>&nbsp; / &nbsp;<span th:text="${pdf7Entry.roadDetails}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 17px;">4.</td>
+<td style="height: 17px; width: 38.0633%;" colspan="2">Nature of Accident</td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.natureOfAccident}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 85px;" rowspan="4">5.</td>
+<td style="height: 17px; width: 98.7591%;" colspan="5"><strong>Offending Vehicle Details</strong></td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 38.0633%;" colspan="2"><strong>Registration No.</strong></td>
+<td style="width: 60.6958%; height: 17px; text-transform: uppercase;" colspan="3"><strong>&nbsp;&nbsp;<span th:text="${pdf7Entry.vehRegNo}"></span></strong></td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 38.0633%;" colspan="2">Make</td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.vehicleMake}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 38.0633%;" colspan="2">Model</td>
+<td style="width: 60.6958%; height: 17px;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.vehicleModel}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 17px;" rowspan="2">&nbsp;</td>
+<td style="height: 17px; width: 38.0633%;" colspan="2">Vehicle Type</td>           
+<td style="width: 60.6958%; height: 17px;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.vehicleType}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 38.0633%;" colspan="2">Vehicle Use Type</td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.vehicleSubType}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 153px;" rowspan="9">6.</td>
+<td style="height: 17px; width: 38.0633%;" colspan="2"><strong>Driver of offending vehicle</strong></td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;</td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 38.0633%;" colspan="2">Name</td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<strong><span th:text="${pdf7Entry.ser_name}"></span></strong></td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 38.0633%;" colspan="2">Father&lsquo;s Name</td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf7Entry.driverFatherName}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 38.0633%;" colspan="2">Mobile No.</td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.serMobileNumber}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 38.0633%;" colspan="2">Address</td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf7Entry.ser_permadd1}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 38.0633%;" colspan="2">Driving license</td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.driverLicenseType}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 38.0633%;" colspan="2">Driving license No.</td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.license_number}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 38.0633%;" colspan="2">Validity of license</td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;Till&nbsp;<span th:text="${pdf7Entry.driverLicenceValidity}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 38.0633%;" colspan="2">Licensing Authority</td>
+<td style="width: 60.6958%; height: 17px;" colspan="3">&nbsp;&nbsp;<span  th:text="${pdf7Entry.driverLicensingAuthority}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 85px;" rowspan="5">7.</td>
+<td style="height: 17px; width: 98.7591%;" colspan="5"><strong>Owner of offending vehicle</strong></td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 38.0633%;" colspan="2">Name</td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<strong><span th:text="${pdf7Entry.ownername}"></span></strong></td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 38.0633%;" colspan="2">Father's Name</td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf7Entry.ownerFatherName}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 38.0633%;" colspan="2">Mobile No.</td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.owner_mobile_no}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 38.0633%;" colspan="2">Address</td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf7Entry.ownerAddr}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 68px;" rowspan="4">8.</td>
+<td style="height: 17px; width: 98.7591%;" colspan="5"><strong>Insurance Details of offending vehicle</strong></td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 38.0633%;" colspan="2">Policy No.</td>
+<td style="height: 17px; width: 60.6958%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.insurancePolicyno}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 38.0633%;" colspan="2">Period of Policy</td>
+<td style="height: 17px; width: 60.6958%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;Till&nbsp;<span th:text="${pdf7Entry.insuranceValidity}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 38.0633%;" colspan="2">Name of Insurance Company</td>
+<td style="height: 17px; width: 60.6958%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf7Entry.insuranceDetails}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 17px;">9.</td>                        
+<td style="height: 17px; width: 38.0633%;" colspan="2">Whether License has been verified from the Authority. If yes, attach report If no, give reasons</td>
+<td style="height: 17px; width: 60.6958%; " colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.driverLicensingAuthority}"></span></br>
+<span style="text-transform: lowercase;" th:text="${pdf7Entry.licenseVerifiedReasons}"></span>
+</td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 17px;">10.</td>
+<td style="height: 17px; width: 38.0633%;" colspan="2">Whether Driving License suspended/ cancelled If yes, give details</td>
+<td style="height: 17px; width: 60.6958%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.driver_license_suspended}"></span></br>
+<span style="text-transform: lowercase;" th:text="${pdf7Entry.licenseSuspendedDetails}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 17px;">11.</td>
+<td style="height: 17px; width: 38.0633%;" colspan="2">
+<p>Whether driver injured during the accident? If yes, give details</p>
+</td>
+<td style="height: 17px; width: 60.6958%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.driverInjuredOrNot}"></span></br>
+<span style="text-transform: lowercase;" th:text="${pdf7Entry.driInjInAccDetails}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 17px;">12.</td>
+<td style="height: 17px; width: 38.0633%;" colspan="2">Vehicle was Driven by</td>
+<td style="height: 17px; width: 60.6958%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf7Entry.vehicleDrivenBy}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 17px;">13.</td>
+<td style="height: 17px; width: 38.0633%;" colspan="2">
+<p>Whether the Driver was driving under the influence of alcohol/drugs Whether findings based on scientific report? If yes, give details</p>
+</td>
+<td style="height: 17px; width: 60.6958%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.drunk}"></span></br>
+<span style="text-transform: lowercase;" th:text="${pdf7Entry.scientificReportDetails}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 68px;" rowspan="4">14.</td>
+<td style="height: 17px; width: 38.0633%;" colspan="2">
+<p>Whether driver carrying mobile phone at the time of accident? If yes, give details of Mobile</p>
+</td>
+<td style="height: 17px; width: 60.6958%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.driverMobileUsage}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 38.0633%;" colspan="2">Mobile No.</td>
+<td style="height: 17px; width: 60.6958%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.serMobileNumber}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 38.0633%;" colspan="2">IMEI No.</td>
+<td style="height: 17px; width: 60.6958%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.driver_imei}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="height: 17px; width: 38.0633%;" colspan="2">Make &amp; Model</td>
+<td style="height: 17px; width: 60.6958%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf7Entry.driver_make_model}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 17px;">15.</td>
+<td style="height: 17px; width: 38.0633%;" colspan="2">
+<p>Whether driver previously involved in motor accident case(s)? If yes, whether case pending or decided by MACT? Give details of The FIR and MACT case</p>
+</td>
+<td style="height: 17px; width: 60.6958%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf7Entry.owner_mact}"></span></br>
+<span style="text-transform: lowercase;" th:text="${pdf7Entry.mactOwnerVehicleFir}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 51px;" rowspan="3">16.</td>
+<td style="width: 98.7591%; height: 17px;" colspan="5"><strong>In case of commercial vehicle</strong></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 38.0633%; height: 17px;" colspan="2">Permit details</td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.permitno}"></span></br>&nbsp;&nbsp;<span th:text="${pdf7Entry.permitvalidity}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 38.0633%; height: 17px;" colspan="2">Fitness details</td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.fitcertval}"></span></td>
+</tr>
+<tr>
+<td style="width: 1.24069%; height: 112px;">17.</td>
+<td style="width: 38.0633%; height: 112px;" colspan="2">
+<p>Whether Permit and Fitness have been verified from the Authority? If yes, attach report If no, give reasons</p>
+</td>
+<td style="width: 60.6958%; height: 112px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.permitFitnessVerified}"></span></br>
+<span th:text="${pdf7Entry.permitFitnessVerifiedReasons}"></span></td>  
+</tr>
+<tr style="height: 52px;">
+<td style="width: 1.24069%; height: 52px;">18.</td>
+<td style="width: 38.0633%; height: 52px;" colspan="2">Whether the Owner reported the accident to the Insurance Company If yes, give date</td>
+<td style="width: 60.6958%; height: 52px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.ownerReportedAccInsDate}"></span></br>
+<span style="text-transform: lowercase;" th:text="${pdf7Entry.ownerReportedAcctoInsdt}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 17px;">19.</td>
+<td style="width: 38.0633%; height: 17px;" colspan="2">
+<p>In case the driver fled from spot,whether the owner produced the driver before the police? If yes, attach the copy of notice under Section 133 of Motor Vehicles Act.</p>
+</td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf7Entry.owner_driver_ran_ownerproduce}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 99.9998%; height: 17px;" colspan="6"><strong>Victim(s) details</strong></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 17px;">20.</td>
+<td style="height: 17px; width: 38.0633%;" colspan="2">Victim(s)</td>
+<td style="height: 17px; width: 60.6958%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.victimType}"></span></td>
+</tr>
+</tbody>
+</table>
+
+<table style="border-collapse: collapse; width: 100%; height: auto;" border="1">
+<tbody>
+<span th:if="${pdf7Entry.injurySeverity == '1'}" >
+<tr style="height: 17px;">
+<td style="width: 100%; text-align: center; height: 17px;" colspan="6" id="myDIV"><strong>DEATH CASE</strong></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 17px;">21</td>
+<td style="width: 38.0633%; height: 17px;" colspan="2">Name of the deceased</td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<strong><span th:text="${pdf7Entry.nameOfDeceased}"></span></strong></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 17px;">22.</td>
+<td style="width: 38.0633%; height: 17px;" colspan="2">Age of the deceased</td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.ageOfDeceased}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 17px;">23.</td>
+<td style="width: 38.0633%; height: 17px;" colspan="2">Occupation</td>
+<td style="width: 60.6958%; height: 17px; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf7Entry.occupationOfDeceased}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 17px;">24.</td>
+<td style="width: 98.7591%; height: 17px;" colspan="5"><strong>Details of Legal Representatives of the deceased</strong></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 1.24069%; height: 17px; text-transform: capitalize;">&nbsp;</td>
+<td style="height: 17px; text-align: center; width: 38.0633%;" colspan="2">Name</td>
+<td style="width: 30.3531%; height: 17px; text-align: center;">Relation</td>
+<td style="height: 17px; text-align: center; width: 30.3427%;" colspan="2">Age</td>
+</tr>
+<tr style="height: 17px;"th:each="deceased , iStat : ${pdf7Entry.deceasedDetails}">
+<td style="width: 1.24069%; height: 17px; text-align: center;">(i)</td>
+<td style="width: 38.0633%; height: 17px; text-transform: capitalize;text-align: center;" colspan="2"><span style="text-transform: lowercase;" th:text="${deceased.legalRepName}"></span></td>
+<td style="width: 30.3531%; height: 17px; text-transform: capitalize;text-align: center;"><span style="text-transform: lowercase;" th:text="${deceased.legalRepRelation}"></span></td>
+<td style="width: 30.3427%; height: 17px; text-transform: capitalize;text-align: center;" colspan="2"><span th:text="${deceased.legalRepAge}"></span></td>
+</tr>
+</span>
+
+<span th:unless="${pdf7Entry.injurySeverity == '1'}" > 
+<tr>
+<td style=" text-align: center;" colspan="6"><strong>INJURY CASE</strong></td>
+</tr>
+<tr>
+<td style="width: 1.24069%; height: 17px;">25.</td>
+<td style="height: 17px; width: 38.0633%;" colspan="2">Name of the injured</td>
+<td style="height: 17px; width: 60.6958%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<strong><span th:text="${pdf7Entry.nameOfInjured}"></span></strong></td>
+</tr>
+<tr>
+<td style="width: 1.24069%; height: 17px;">26.</td>
+<td style="height: 17px; width: 38.0633%;" colspan="2">Age</td>
+<td style="height: 17px; width: 60.6958%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf7Entry.ageOfInjured}"></span></td>
+</tr>
+<tr>
+<td style="width: 1.24069%; height: 17px;">27.</td>
+<td style="height: 17px; width: 38.0633%;" colspan="2">Occupation</td>
+<td style="height: 17px; width: 60.6958%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span style="text-transform: lowercase;"th:text="${pdf7Entry.occupationOfInjured}"></span></td>
+</tr>
+<tr>
+<td style="width: 1.24069%; height: 51px;" >28.</td>
+<td style="height: 17px; width: 38.0633%;" colspan="2">Nature of Injury</td>
+<td style="height: 17px; width: 60.6958%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp; <span style="text-transform: lowercase;" th:text="${pdf7Entry.natureOfInjuryInjured}"></span></td>
+</tr>
+<tr>
+<td style="width: 1.24069%; height: 17px;">29.</td>
+<td style="height: 17px; width: 38.0633%;" colspan="2">Details of Injury</td>
+<td style="height: 17px; width: 60.6958%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf7Entry.detailsOfInjuryInjured}"></span></td>
+</tr>
+</span>
+
+<tr>
+<td style="width: 1.24069%; height: 17px;">30.</td>
+<td colspan="2">Offences Charged</td>
+<td colspan="4" ></td>
+</tr>
+
+ <tr>
+<td style="width: 1.24069%; text-align: center;"></td>
+<td style="width: 18.2519%;"colspan="5">&nbsp;&nbsp;<span th:text="${pdf7Entry.section}"></span></td>
+</tr>
+
+<tr>
+<td style="width: 1.24069%; height: 17px; text-align: left;">31.</td>
+<td style="height: 17px; width: 68.4164%;" colspan="5">Detailed description of the Accident : </br>&nbsp;<span th:text="${pdf7Entry.briefDescription}"></span></td>
+</tr>
+<tr>
+<td style="width: 1.24069%; height: 17px; text-align: left;">32.</td>
+<td style="height: 17px; width: 68.4164%;" colspan="3">Direction(s) required from the Claims Tribunal</td>
+<td style="height: 17px; width: 30.3427%;" colspan="2">&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 1.24069%; text-align: center; height: 18px;">i.</td>
+<td style="height: 18px; width: 68.4164%;" colspan="3">The driver of the offending vehicle has not furnished Form-III/has furnished incomplete Form-III, despite letter(s) dated&hellip;&hellip;&hellip;&hellip;&hellip;.. [Copy (s) attached].The driver be directed to furnish the Form-III before this Tribunal within 15 days.</td>
+<td style="height: 18px; width: 30.3427%; text-transform: capitalize;" colspan="2"><span th:text="${pdf7Entry.driRemainderDate}"></span></td>
+</tr>
+<tr>
+<td style="width: 1.24069%; text-align: center; height: 18px;">ii.</td>
+<td style="height: 18px; width: 68.4164%;" colspan="3">The owner of the offending vehicle has not furnished Form-IV/ has furnished incomplete Form-IV, despite letter(s) dated&hellip;&hellip;&hellip;&hellip;&hellip;.. [Copy (s) attached].The owner may be directed to furnish the Form-IV  before this Tribunal within 15 days.</td>
+<td style="height: 18px; width: 30.3427%; text-transform: capitalize;" colspan="2"><span th:text="${pdf7Entry.OwnRemainderDate}"></span></td>
+</tr>
+<tr>
+<td style="width: 1.24069%; text-align: center; height: 18px;">iii.</td>
+<td style="height: 18px; width: 68.4164%;" colspan="3">The victim(s) of the accident has/have not furnished Form-VI/ Form-VIA/ has furnished incomplete Form-VI/ Form-VIA, despite letter(s) dated&hellip;&hellip;&hellip;&hellip;&hellip;.. [Copy (s) attached]. The victim may be directed to furnish the Form-VI/ Form-VIA before this Tribunal within 15 days.</td>
+<td style="height: 18px; width: 30.3427%; text-transform: capitalize;" colspan="2"><span th:text="${pdf7Entry.victimRemainderDate}"></span></td>
+</tr>
+<tr> 
+<td style="width: 1.24069%; text-align: center; height: 18px;">iv.</td>
+<td style="height: 18px; width: 68.4164%;" colspan="3">The Registration Authority has not given the Verification Report despite letter(s) dated &hellip;&hellip;&hellip;&hellip;&hellip;.. [Copy (s) attached]. The Registration Authority be directed to furnish the Verification Report directly before this Tribunal within 15 days.</td>
+<td style="height: 18px; width: 30.3427%; text-transform: capitalize;" colspan="2"><span th:text="${pdf7Entry.regAuthRemainderDate}"></span></td>
+</tr>
+<tr>
+<td style="width: 1.24069%; text-align: center; height: 18px;">v.</td>
+<td style="height: 18px; width: 68.4164%;" colspan="3">The Hospital has not given the MLC/ Post Mortem report despite letter(s) dated &hellip;&hellip;&hellip;&hellip;&hellip;.. [Copy (s) attached]. The Hospital be directed to furnish the above-mentioned documents directly before this Tribunal within 15 days.</td>
+<td style="height: 18px; width: 30.3427%; text-transform: capitalize;" colspan="2"><span th:text="${pdf7Entry.hospitalRemainderDate}"></span></td>
+</tr>
+
+
+</tbody>
+<div class="footer">
+e-DAR  Detailed Accident Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Date of Generation&nbsp;<span th:text="${pdf7Entry.currentDate}"></span>
+  </div>   
+</table>
+
+
+
+<table style="border-collapse: collapse; width: 100%; height: 108px;" border="0">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 1.24069%; height: 18px;" colspan="6">
+<p><strong>Verification:</strong></p>
+<p>Verified at &nbsp;<strong><u><span style="text-transform:lowercase;" th:text="${pdf7Entry.psName}"></span></u></strong>&nbsp;&nbsp;on this &nbsp;<u><strong><span th:text="${pdf7Entry.footerDate}"></span></strong></u>&nbsp;day of ________ that the contents of the above report are true and correct, and the</p>
+<p>documents were gathered during investigation.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table style="border-collapse: collapse; width: 100%; height: 109px;" border="0">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 100%; height: 18px;text-align: right;" colspan="10"></td>
+</tr>
+
+
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px; text-align:right" colspan="8"><strong>&nbsp;Signature&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;" colspan="2"></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px; text-align:right" colspan="8"><strong>&nbsp;Name&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;" colspan="2"><span th:text="${pdf7Entry.shoName}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px; text-align:right" colspan="8"><strong>&nbsp;Designation&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;" colspan="2"><span th:text="${pdf7Entry.shoDesignation}"></span>&nbsp;&nbsp;<strong>(S.H.O./I.O)</strong></td>
+</tr>
+
+<tr style="height: 18px;">
+<td style="width:10%; height: 18px;text-align: right;" colspan="8"><strong>P.I.S./EMPLOYEE No.&nbsp;:</strong></td>
+<td style="width:10%; height: 18px;" colspan="2">&nbsp;<span th:text="${pdf7Entry.investigatingOfficerPis}"></span></td>
+</tr>
+<tr style="height: 19px;">
+<td style="width: 10%; height: 19px;text-align: right;"colspan="8"><strong>Phone No.&nbsp;:</strong></td>
+<td style="width: 10%; height: 19px;" colspan="2">&nbsp;<span th:text="${pdf7Entry.investigatingOfficerMobile}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px;text-align: right;" colspan="8"><strong>P.S.&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;  text-transform: capitalize;" colspan="2">&nbsp;<span style=" text-transform:lowercase;" th:text="${pdf7Entry.psName}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%;text-align: right;" colspan="8"><strong>Date&nbsp;:</strong></td>
+<td style="width: 10%;" colspan="2">&nbsp;<span th:text="${pdf7Entry.currentDate}"></span></td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>
+

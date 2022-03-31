@@ -1,0 +1,415 @@
+<html>
+<head>
+<style type="text/css">
+    body {
+      font: 12pt Georgia, "Times New Roman", Times, serif;
+      line-height: 1.3;
+      /* min-height: 300vh;
+  position: relative;
+  margin: 0; */
+    }
+
+   
+
+    div.footer {
+    
+      display: block;
+      text-align:left;
+      position: running(footer);
+     
+    }
+#footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#footer p {
+  border-top: 2px solid #555555;
+  margin-top:10px;
+}
+  
+    @page {
+        @bottom-center {
+            content: element(footer);
+        }
+    }
+    #background{
+    padding-left: 245px;
+    position: absolute;
+    
+    /* z-index: 0; */
+    background: white;
+    backgroung-position: center;
+    display: block;
+    /* min-height: 50%; */
+    /* min-width: 50%; */
+    color: yellow;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 271px;
+    
+}
+#background1{
+    padding-top:-100px;
+    position: absolute;
+    
+    /* z-index: 0; */
+    background: white;
+    backgroung-position: center;
+    display: block;
+    /* min-height: 50%; */
+    /* min-width: 50%; */
+    color: yellow;
+    margin-left:200px;
+   
+    
+}
+#content{
+    position: absolute;
+    z-index:10;
+}
+
+#bg-text
+{
+    color:lightgrey;
+    font-size:120px;
+    transform:rotate(300deg);
+    -webkit-transform:rotate(300deg);
+    opacity:0.5;
+      z-index: 9999;
+    
+}
+
+  
+                
+  </style>
+ 
+  </head>
+   <body class="watermark">
+	<div id="background">
+  <p id="bg-text">e-DAR</p>
+	</div>
+	
+
+<br>	
+<table style="border-collapse: collapse; width: 100%; height: 32px; margin-left: auto; margin-right: auto;" border="0">
+<tbody>
+<tr style="height: 32px;">
+<td style="width: 100%; height: 32px; text-align: center;">
+<p><strong>FORM-1
+<img style="float: right;"  th:src="@{${'https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/'+pdf1Entry.stateCode+'_police.jpg'}}" alt="" width="91" height="84" /><img style="float: left;" src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/eDAR_logo1.png" alt="" width="91" height="84" />
+</strong></p>
+<p><strong>FIRST ACCIDENT REPORT (FAR)</strong></p>
+<p><strong>Accident Id -<span th:text="${pdf1Entry.accidentId}"></span></strong></p>
+<p>By Investigating Officer to Claims Tribunal<br>
+Within 48 hours of the receipt of intimation of the Accident<br>
+Copy to Victim(s) and Insurance Company and State Legal Services Authority(SLSA)</p>
+</td>
+</tr>
+</tbody>
+</table><br>
+
+<table style="border-collapse: collapse; width: 100%; height: 78px; margin-left: auto; margin-right: auto;" border="1">
+<tbody>
+<tr style="height: 27px;">
+<td style="width: 23.2026%; height: 27px;">FIR No.</td>
+<td style="width: 76.7974%; height: 27px;text-transform: uppercase ;">&nbsp;&nbsp;<span th:text="${pdf1Entry.firNumber}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 23.2026%; height: 17px;">Date</td>
+<td style="width: 76.7974%; height: 17px;text-transform: uppercase ;">&nbsp;<span th:text="${pdf1Entry.firDateTime}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 23.2026%; height: 17px;">Under Section</td>
+<td style="width: 76.7974%; height: 17px;text-transform: capitalize ;">&nbsp;&nbsp;<span th:text="${pdf1Entry.act}"></span><br>&nbsp;&nbsp;<span th:text="${pdf1Entry.section}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 23.2026%; height: 17px;">Police Station</td>
+<td style="width: 76.7974%; height: 17px;text-transform: capitalize ;">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf1Entry.psName}"></span>(P.S),<span style="text-transform: lowercase;" th:text="${pdf1Entry.district}"></span>,<span style="text-transform: lowercase;" th:text="${pdf1Entry.state}"></span></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table style="border-collapse: collapse; width: 100%; height: 505px;" border="1">
+<tbody>
+<tr style="height: 23px;">
+<td style="width: 5.21594%; height: 18px;">1.</td>
+<td style="width: 34.5558%; height: 18px;">Date of Accident</td>
+<td style="width: 60.2282%; height: 18px;text-transform: capitalize;">&nbsp;&nbsp;<span th:text="${pdf1Entry.dateTime}"></span></td>
+</tr>
+<tr style="height: 23px;">
+<td style="width: 5.21594%; height: 18px;">2.</td>
+<td style="width: 34.5558%; height: 18px;">Time of Accident</td>
+<td style="width: 60.2282%; height: 18px;text-transform: capitalize;">&nbsp;&nbsp;<span th:text="${pdf1Entry.timeOfTheDay}"></span></td>
+</tr>
+<tr style="height: 23px;">
+<td style="width: 5.21594%; height: 18px;">3.</td>
+<td style="width: 34.5558%; height: 18px;">Place of Accident</td>
+<td style="width: 60.2282%; height: 18px;text-transform: capitalize;">&nbsp;&nbsp;<span th:text="${pdf1Entry.landmarks}"></span>&nbsp; / &nbsp;<span th:text="${pdf1Entry.roadDetails}"></span></td>
+</tr>
+<tr style="height: 23px;">
+<td style="width: 5.21594%; height: 90px;" rowspan="5">4.</td>
+<td style="width: 34.5558%; height: 18px;">Source of Information</td>
+<td style="width: 60.2282%; height: 18px;">&nbsp;<span th:text="${pdf1Entry.sourceOfInformation}"></span></td>
+</tr>
+<tr style="height: 23px;">
+<td style="width: 34.5558%; height: 18px;" colspan="2"><strong>Name, mobile number &amp; address of the Informant</strong></td>
+</tr>
+<tr style="height: 23px;">
+<td style="width: 34.5558%; height: 18px;">Name</td>
+<td style="width: 60.2282%; height: 18px;text-transform: capitalize;">&nbsp;&nbsp;<span th:text="${pdf1Entry.informantName}"></span></td>
+</tr>
+<tr style="height: 23px;">
+<td style="width: 34.5558%; height: 18px;">Mobile No.</td>
+<td style="width: 60.2282%; height: 18px;text-transform: capitalize;">&nbsp;&nbsp;<span th:text="${pdf1Entry.informerContactNumber}"></span></td>
+</tr>
+<tr style="height: 23px;">
+<td style="width: 34.5558%; height: 18px;">Address</td>
+<td style="width: 60.2282%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf1Entry.informerContactAddress}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.21594%; height: 18px;" rowspan="7">5.</td>
+<td style="width: 34.5558%; height: 18px;">Nature of Accident</td>
+<td style="width: 60.2282%; height: 18px;text-transform: capitalize;">&nbsp;&nbsp;<span th:text="${pdf1Entry.natureOfAccident}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.5558%; height: 18px;">Number of Vehicles involved</td>
+<td style="width: 60.2282%; height: 18px;text-transform: capitalize;">&nbsp;&nbsp;<span th:text="${pdf1Entry.vehiclesCount}"></span></td>
+</tr>
+<tr style="height: 36px;">
+<td style="width: 34.5558%; height: 36px;">Whether Registration Number of the Offending Vehicle known</td>
+<td style="width: 60.2282%; height: 36px;text-transform: capitalize;">&nbsp;&nbsp;<span th:text="${pdf1Entry.regnstatus}"></span></td>
+</tr>
+<tr style="height: 36px;">
+<td style="width: 34.5558%; height: 36px;">Whether offending Vehicle impounded by the police</td>
+<td style="width: 60.2282%; height: 36px;text-transform: capitalize;">&nbsp;&nbsp;<span th:text="${pdf1Entry.vehImpoundedPolice}"></span></td>
+</tr>
+<tr style="height: 13px;">
+<td style="width: 34.5558%; height: 13px;">Whether the driver of the offending vehicle found on the spot</td>
+<td style="width: 60.2282%; height: 13px;text-transform: capitalize;">&nbsp;&nbsp;<span th:text="${pdf1Entry.offendingVehSpotted}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.5558%; height: 18px;">Number of Fatalities</td>
+<td style="width: 60.2282%; height: 18px;text-transform: capitalize;">&nbsp;&nbsp;<span th:text="${pdf1Entry.totalDead}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.5558%; height: 18px;">Number of Injured</td>
+<td style="width: 60.2282%; height: 18px;text-transform: capitalize;">&nbsp;&nbsp;<span th:text="${pdf1Entry.totalInjured}"></span></td>
+</tr>
+</tbody>
+<div class="footer">  
+e-DAR  Detailed Accident Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Date of Generation&nbsp;<span th:text="${pdf1Entry.currentDate}"></span>
+</div>
+</table>
+
+<table style="border-collapse: collapse; width: 100%; height: 54px;" border="1" th:each="details2, iStat :${pdf1Entry.hospital}">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 5.21594%; height: 18px;">6.<span th:text="${iStat.index+1}"></span></td>
+<td style="width: 34.5558%; height: 18px;" colspan="2"><strong>Details of the Hospital where victim(s) taken</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 5.2083%; height: 54px;" rowspan="3">&nbsp;</td>
+<td style="width: 34.6117%; height: 18px;">Hospital Name</td>
+<td style="width: 60.1799%; height: 18px;text-transform: capitalize;">&nbsp;<span th:text="${details2.hospitalName}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.6117%; height: 18px;">Address</td>
+<td style="width: 60.1799%; height: 18px;text-transform: capitalize;">&nbsp;<span th:text="${details2.hospitalAddress}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.6117%; height: 18px;">Doctor&lsquo;s Name</td>
+<td style="width: 60.1799%; height: 18px;text-transform: capitalize;">&nbsp;Dr.<span th:text="${details2.doctorName}"></span></td>
+</tr>
+<tr>
+<td style="width: 2%;">&nbsp;</td>
+<td style="width: 29.9242%;">Doctor Registration Number</td>
+<td style="width: 60.1799%;">&nbsp;<span th:text="${details2.doctorRegno}"></span></td>
+</tr>
+</br>
+</tbody>
+<div class="footer">
+e-DAR  Detailed Accident Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Date of Generation&nbsp;<span th:text="${pdf1Entry.currentDate}"></span>
+  </div>
+</table>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 5.24014%;" rowspan="2">7.</td>
+<td style="width: 34.3434%;height:1px;">Availability of CCTV Footage If yes, CCTV Footage be preserved and be filed with DAR</td>
+<td style="width: 60.2282%; height: 12px;text-transform: capitalize;">&nbsp;&nbsp;<span th:text="${pdf1Entry.cctvAvailability}"></span><br>&nbsp;&nbsp;<span th:text="${pdf1Entry.cctvFootage}"></span></span></td>
+</tr>
+</tbody>
+</table>
+
+<p>&nbsp;</p>
+<table style="border-collapse: collapse; width: 100%; height: 306px;  margin-left: auto; margin-right: auto;" border="1" >
+<tbody>
+<div id="background">
+  <p id="bg-text">e-DAR</p>
+	</div>
+	
+<tr>
+<td style="width: 5.36232%;">&nbsp;8.</td>
+<td style="width: 21.3434%; height: 18px; text-align: center;"colspan="4"><strong>Details of Owner(s), Driver(s) and Insurance of the Vehicle(s)</strong></td>
+</tr>
+	<span th:each="details, iStat :${pdf1Entry.vehicleAndDriver}">
+<tr style="height: 29px;" >
+<td style="width: 5.36232%; height: 103px;" rowspan="3">&nbsp;</td>
+<td style="width: 21.3434%; height: 18px; text-align: center;"><strong>Details</strong></td>
+<td style="height: 18px;" colspan="3">
+<p style="text-align: center;"><strong>Vehicle <span th:text="${iStat.index+1}"></span></strong><br>
+<span th:if="${details.accusedVictim == 'Accused'}" >
+<strong>(Offending vehicle)</strong>
+</span></p>
+<span th:unless="${details.accusedVictim == 'Accused'}" >
+<p style="text-align: center;"></p>
+</span>
+</td>
+</tr>
+<tr style="height: 27px;">
+<td style="width: 21.3434%; height: 27px;" colspan="4"><strong>Vehicle&nbsp; Details</strong></td>
+</tr>
+<tr style="height: 29px;">
+<td style="width: 21.3434%; height: 29px;">Vehicle Registration No</td>
+<td style="width: 33.8382%; height: 29px; text-transform: uppercase;" colspan="3"><strong>&nbsp;&nbsp;<span th:text="${details.vehicleRegNo}"></span></strong></td>
+</tr>
+<tr style="height: 30px;">
+<td style="width: 5.36232%; height: 116px;" rowspan="4">&nbsp;</td>
+<td style="width: 55.1816%; height: 30px;" colspan="4"><strong>Driver Details</strong></td>
+</tr>
+<tr style="height: 26px;">
+<td style="width: 21.3434%; height: 26px;">Name of the Driver</td>
+<td style="height: 26px; width: 33.8382%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<strong><span th:text="${details.nameOfTheDriver}"></span></strong></td>
+</tr>
+<tr style="height: 29px;">
+<td style="width: 21.3434%; height: 29px;">Address of Driver</td>
+<td style="height: 29px; width: 33.8382%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span style="text-transform: lowercase;padding:2px;" th:text="${details.addressOfDriver1}"></span></td>
+</tr>
+<tr style="height: 31px;">
+<td style="width: 21.3434%; height: 31px;">Mobile No. of Driver</td>
+<td style="height: 31px; width: 33.8382%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span  th:text="${details.driverContactNumber}"></span></td>
+</tr>
+<tr style="height: 29px;">
+<td style="width: 5.36232%; height: 119px;" rowspan="4">&nbsp;</td>
+<td style="width: 55.1816%; height: 29px;" colspan="4"><strong>Owner Details</strong></td>
+</tr>
+<tr style="height: 35px;">
+<td style="width: 21.3434%; height: 35px;">Name of the Owner</td>
+<td style="height: 35px; width: 33.8382%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<strong><span th:text="${details.nameOfTheOwner}"></span></strong></td>
+</tr>
+<tr style="height: 28px;">
+<td style="width: 21.3434%; height: 28px;">Address of Owner</td>
+<td style="height: 28px; width: 33.8382%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${details.addressOfOwner}"></span></td>
+</tr>
+<tr style="height: 27px;">
+<td style="width: 21.3434%; height: 27px;">Mobile No. of Owner</td>
+<td style="height: 27px; width: 33.8382%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf1Entry.owner_mobile_no}"></span></td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 5.36232%; height: 137px;" rowspan="5">&nbsp;</td>
+<td style="width: 55.1816%; height: 24px;" colspan="4"><strong>Insurance Details</strong></td>
+</tr>
+<tr style="height: 26px;">
+<td style="width: 21.3434%; height: 26px;">Insurance Policy No.</td>
+<td style="height: 26px; width: 33.8382%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${details.insurancePolicyNumber}"></span></td>
+</tr>
+<tr style="height: 23px;">
+<td style="width: 21.3434%; height: 23px;">Period of Insurance Policy</td>
+<td style="height: 23px; width: 33.8382%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;Till&nbsp;<span th:text="${details.periodOfInsurancePolicy}"></span></td>
+</tr>
+<tr style="height: 24px;">
+<td style="width: 21.3434%; height: 24px;">Name of Insurance&nbsp; Company&nbsp;</td>
+<td style="height: 24px; width: 33.8382%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${details.nameOfInsuranceCompany}"></span></td>
+</tr>
+<tr style="height: 40px;">
+<td style="width: 21.3434%; height: 40px;">Address of Insurance Company</td>
+<td style="height: 40px; width: 33.8382%; text-transform: capitalize;" colspan="3">&nbsp;&nbsp;<span th:text="${details.addressOfInsuranceCompany}"></span> </td>
+</tr>
+</span>	
+</tbody>
+<div class="footer">
+e-DAR  Detailed Accident Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Date of Generation&nbsp;<span th:text="${pdf1Entry.currentDate}"></span>
+  </div>
+
+</table>
+
+ <table style="border-collapse: collapse; width: 100%; height: 42px; margin-left: auto; margin-right: auto;" border="1" >
+<tbody>
+<div id="background1">
+  <p id="bg-text">e-DAR</p>
+	</div>
+<tr style="height: 28px;">
+<td style="width: 5.36232%; height: 29px;">9</td>
+<td style="width: 94.1492%; height: 29px;" colspan="4"><strong>Details of Victim(s)</strong></td>
+</tr>
+<tr style="height: 25px;">
+<td style="width: 5.36232%; height: 32px;">&nbsp;</td>
+<td style="width: 20.7391%; height: 32px; text-align: center;">Name</td>
+<td style="height: 32px; text-align: center; width: 25.5288%;">Deceased/Injured</td>
+<td style="text-align: center; width: 47.8813%; height: 32px;" colspan="2">Address &amp; Contact Details</td>
+</tr>
+<tr style="height: 23px;" th:each="details1, iStat : ${pdf1Entry.injuredAndDeseased}">
+<td style="width: 5.36232%; height: 23px; text-align: center;"><span th:text="${iStat.index+1}"></span></td>
+<td style="width: 5.3434%; height: 23px;text-transform: capitalize;text-align: left;">&nbsp;<span style="text-transform: lowercase;" th:text="${details1.name}"></span></td>
+<td style="height:23px; text-transform: capitalize;text-align: center;" colspan="2"><span style="text-transform: lowercase;" th:text="${details1.injuredOrDeseased}"></span></td>
+<td style="width: 50.1474%; height: 23px;text-transform: capitalize;">&nbsp;<span style="text-transform: lowercase;" th:text="${details1.address}"></span><br>
+Mobile No:<span style="text-transform: lowercase;" th:text="${details1.mobileNo}"></td>
+</tr>
+                                                                                                                                                                                                 
+</tbody>
+</table> 
+<br><br>
+
+<table style="border-collapse: collapse; width: 100%; height: 126px;" border="0">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px; text-align:right" colspan="8"><strong>&nbsp;Signature&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;" colspan="2"></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px;text-align:right" colspan="8"><strong>&nbsp; Name&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;" colspan="2"><span th:text="${pdf1Entry.shoName}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px;text-align:right" colspan="8"><strong>&nbsp; Designation&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;" colspan="2"><span th:text="${pdf1Entry.shoDesignation}"></span>&nbsp;&nbsp;<strong>(S.H.O./I.O)</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px;text-align:right" colspan="8"><strong>&nbsp; P.I.S./EMPLOYEE No&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;" colspan="2">&nbsp;<span th:text="${pdf1Entry.investigatingOfficerPis}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px;text-align:right" colspan="8"><strong>&nbsp; Phone No.&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;" colspan="2">&nbsp;<span th:text="${pdf1Entry.investigatingOfficerMobile}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px;text-align:right" colspan="8"><strong>&nbsp; P.S&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px; text-transform: capitalize;" colspan="2">&nbsp;<span style="text-transform: lowercase;" th:text="${pdf1Entry.psName}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px;text-align:right" colspan="8"><strong>&nbsp; Date&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;" colspan="2">&nbsp;<span th:text="${pdf1Entry.currentDate}"></span></td>
+</tr>
+<tr>
+<td colspan="10"><strong>Documents attached:</strong></td>
+</tr>
+<tr>
+<td style="width: 50%;" colspan="10">i.&nbsp; &nbsp;Copy of FIR &nbsp;&nbsp;<span th:if="${pdf1Entry.form1DocAttached == '1'}" ><img src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/yes.png" alt="Attached" width="15" height="15" /></span>
+<span th:unless="${pdf1Entry.form1DocAttached == '1'}" >
+<img src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/no.png" alt="Not Attached" width="15" height="15" />
+</span></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

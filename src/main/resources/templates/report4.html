@@ -1,0 +1,367 @@
+<html>
+<head>
+<style type="text/css">
+    body {
+      font: 12pt Georgia, "Times New Roman", Times, serif;
+      line-height: 1.3;
+      /* min-height: 300vh;
+  position: relative;
+  margin: 0; */
+    }
+
+   
+
+    div.footer {
+    
+      display: block;
+      text-align: center;
+      position: running(footer);
+     
+    }
+
+  
+    @page {
+        @bottom-center {
+            content: element(footer);
+        }
+    }
+    #background{
+    padding-left: 245px;
+    position: absolute;
+    
+    /* z-index: 0; */
+    background: white;
+    backgroung-position: center;
+    display: block;
+    /* min-height: 50%; */
+    /* min-width: 50%; */
+    color: yellow;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 271px;
+    
+}
+
+#content{
+    position: absolute;
+    z-index:10;
+}
+
+#bg-text
+{
+    color:lightgrey;
+    font-size:120px;
+    transform:rotate(300deg);
+    -webkit-transform:rotate(300deg);
+    opacity:0.5;
+      z-index: 9999;
+    
+}
+
+  
+                
+  </style>
+  <body class="watermark">
+	<div id="background">
+  <p id="bg-text">e-DAR</p>
+	</div>
+  </head>
+<body>
+<table style="border-collapse: collapse; width: 100%; height: 32px; margin-left: auto; margin-right: auto;" border="0">
+<tbody>
+<tr style="height: 32px;">
+<td style="width: 100%; height: 32px; text-align: center;">
+<p><strong>FORM-IV&nbsp;
+<img style="float: right;"  th:src="@{${'https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/'+pdf4Entry.stateCode+'_police.jpg'}}" alt="" width="91" height="84" /><img style="float: left;" src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/eDAR_logo1.png" alt="" width="91" height="84" />
+</strong></p>
+
+<p><strong>OWNER'S/ INSURED'S FORM</strong></p>
+<p><strong>Accident Id - <span th:text="${pdf4Entry.accidentId}"></span></strong></p>
+<p>By Owner of the vehicle(s) to Investigating Officer Within 30 days of the Accident<br>
+ Copy to Victim(s) and Insurance Company</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table style="border-collapse: collapse; width: 100%; height: 78px; margin-left: auto; margin-right: auto;" border="1">
+<tbody>
+<tr style="height: 27px;">
+<td style="width: 23.2026%; height: 27px;">FIR No.</td>
+<td style="width: 76.7974%; height: 27px;text-transform: uppercase ;">&nbsp;&nbsp;<span th:text="${pdf4Entry.firNumber}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 23.2026%; height: 17px;">Date</td>
+<td style="width: 76.7974%; height: 17px;text-transform: uppercase ;">&nbsp;&nbsp;<span th:text="${pdf4Entry.firDateTime}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 23.2026%; height: 17px;">Under Section</td>
+<td style="width: 76.7974%; height: 17px;text-transform: capitalize ;">&nbsp;&nbsp;<span th:text="${pdf4Entry.act}"></span></br>&nbsp;&nbsp;<span th:text="${pdf4Entry.section}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 23.2026%; height: 17px;">Police Station</td>
+<td style="width: 76.7974%; height: 17px;text-transform: capitalize ;">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf4Entry.psName}"></span>,<span style="text-transform: lowercase;" th:text="${pdf4Entry.district}"></span>,<span style="text-transform: lowercase;" th:text="${pdf4Entry.state}"></span></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table style="border-collapse: collapse; width: 100%; height: 745px; margin-left: auto; margin-right: auto;" border="1">
+<tbody>
+<tr style="height: 17px;">
+<td style="width: 4.31873%; height: 197px;" rowspan="11">1</td>
+<td style="height: 17px; width: 44.6083%;" colspan="2"><strong>Vehicle Details</strong></td>
+<td style="width: 51.073%; height: 17px; text-transform: capitalize;"></td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 44.6083%;" colspan="2"><strong>Registration No.</strong></td>
+<td style="width: 51.073%; height: 18px; text-transform: uppercase ;">&nbsp;&nbsp;<strong><span th:text="${pdf4Entry.vehicle_reg_no}"></span></strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 44.6083%;" colspan="2">Colour</td>
+<td style="width: 51.073%; height: 18px; text-transform: capitalize;">&nbsp;&nbsp;<span th:text="${pdf4Entry.color}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 44.6083%;" colspan="2">Make</td>
+<td style="width: 51.073%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf4Entry.make}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 44.6083%;" colspan="2">Model</td>
+<td style="width: 51.073%; height: 18px; ">&nbsp;&nbsp;<span th:text="${pdf4Entry.vehicleModel}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 44.6083%;" colspan="2">Year of Manufacture</td>
+<td style="width: 51.073%; height: 18px; text-transform: capitalize;">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf4Entry.yearofmanfac}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 44.6083%;" colspan="2">Chassis No.</td>
+<td style="width: 51.073%; height: 18px; text-transform: uppercase ;">&nbsp;&nbsp;<span th:text="${pdf4Entry.chassisno}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 44.6083%;" colspan="2">Engine No.</td>
+<td style="width: 51.073%; height: 18px; text-transform: uppercase ;">&nbsp;&nbsp;<span th:text="${pdf4Entry.engineno}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 44.6083%;" colspan="2">Registering Authority Name</td>
+<td style="width: 51.073%; height: 18px;">&nbsp;&nbsp;<span  th:text="${pdf4Entry.serRegistrationAuthority}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 44.6083%;" colspan="2">Vehicle Type</td>
+<td style="width: 51.073%; height: 18px; text-transform: capitalize;"> &nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf4Entry.vtype}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 44.6083%;" colspan="2">Vehicle Use Type</td>
+<td style="width: 51.073%; height: 18px; text-transform: capitalize;">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf4Entry.vehicleUseType}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.31873%; height: 108px;" rowspan="6">2</td>
+<td style="height: 18px; width: 44.6083%;" colspan="2"><strong>Owner Details</strong></td>
+<td style="width: 51.073%; height: 18px; text-transform: capitalize;"></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.458%; height: 18px;">
+<p>Name&nbsp;</p>
+<p>In case of a company, give name of person in-charge in terms of Section 199 of the MV Act, 1998</p>
+</td>
+<td style="height: 18px; width: 61.2233%; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<strong><span th:text="${pdf4Entry.ownername}"></span></strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.458%; height: 18px;">Father's Name</td>
+<td style="height: 18px; width: 61.2233%; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf4Entry.ownerFatherName}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.458%; height: 18px;">Mobile No.</td>
+<td style="height: 18px; width: 61.2233%; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf4Entry.owner_mobile_no}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.458%; height: 18px;">Address</td>
+<td style="height: 18px; width: 61.2233%" colspan="2">&nbsp;&nbsp;<span th:text="${pdf4Entry.vowneraddr }"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.458%; height: 18px;">Occupation</td>
+<td style="height: 18px; width: 61.2233%; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf4Entry.ownerOccupation }"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.31873%; height: 144px;" rowspan="8">3</td>
+<td style="width: 34.458%; height: 18px;"><strong>Driver Details</strong></td>
+<td style="height: 18px; width: 61.2233%; text-transform: capitalize;" colspan="2"></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.458%; height: 18px;">Name</td>
+<td style="height: 18px; width: 61.2233%; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<strong><span th:text="${pdf4Entry.driverName}"></strong></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.458%; height: 18px;">Father's Name</td>
+<td style="height: 18px; width: 61.2233%; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf4Entry.driverFatherName}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.458%; height: 18px;">Mobile No.</td>
+<td style="height: 18px; width: 61.2233%; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf4Entry.driver_mobile_no}"></span><br>
+<span th:if="${pdf4Entry.driver_mobile_no == pdf4Entry.driver_mobile_no }" >
+<!-- &nbsp;&nbsp;current mobile no: <span th:text="${pdf4Entry.driver_mobile_no}"></span> --></td>
+</span>
+<span th:unless="${pdf4Entry.driver_mobile_no == pdf4Entry.driver_mobile_no }" >
+&nbsp;&nbsp;current mobile no: <span th:text="${pdf4Entry.driver_mobile_no}"></span></td>
+</span>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.458%; height: 18px;">Address</td>
+<td style="height: 18px; width: 61.2233%; text-transform: capitalize;" colspan="2"> &nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf4Entry.Ser_permadd1}"></span> </td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.458%; height: 18px;">Driving License No.</td>
+<td style="height: 18px; width: 61.2233%; text-transform: uppercase ;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf4Entry.license_number}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.458%; height: 18px;">Period of Validity</td>
+<td style="height: 18px; width: 61.2233%; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;Till&nbsp; <span th:text="${pdf4Entry.driverLicenceValidity}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.458%; height: 18px;">Licensing Authority</td>
+<td style="height: 18px; width: 61.2233%;" colspan="2">&nbsp;&nbsp;<span  th:text="${pdf4Entry.licensingAuthority}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.31873%; height: 130px;" rowspan="7">4</td>
+<td style="width: 34.458%; height: 18px;"><strong>Insurance Details</strong></td>
+<td style="height: 18px; width: 61.2233%; text-transform: capitalize;" colspan="2"></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.458%; height: 18px;">Policy No.</td>
+<td style="height: 18px; width: 61.2233%; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf4Entry.insurancePolicyno}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.458%; height: 18px;">Period of Policy</td>
+<td style="height: 18px; width: 61.2233%; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;Till&nbsp;<span th:text="${pdf4Entry.periodOfInsurancePolicy}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.458%; height: 18px;">Name of Insurance Company</td>
+<td style="height: 18px; width: 61.2233%; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf4Entry.nameOfInsuranceCompany}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.458%; height: 18px;">Address of Insurance Company</td>
+<td style="height: 18px; width: 61.2233%; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf4Entry.insComAddr}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.458%; height: 18px;">Details of previous Insurance Policy</td>
+<td style="height: 18px; width: 61.2233%;" colspan="2">&nbsp;&nbsp;<span  th:text="${pdf4Entry.owner_details_pre_ins}"></span></td>
+</tr>
+<tr style="height: 22px;">
+<td style="width: 34.458%; height: 22px;">
+<p> Whether the vehicle previously involved in any MACT case?<br>
+If yes, give details of FIR and MACT case.</p>
+</td>
+<span th:if="${pdf4Entry.owner_mact == 'Yes'}" >
+<td style="height: 22px; width: 61.2233%; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf4Entry.owner_mact}"></span><br>
+<span th:text="${pdf4Entry.mactVehcileFir}"></span>
+</td></span>
+<span th:unless="${pdf4Entry.owner_mact == 'Yes'}" >
+<td style="height: 22px; width: 61.2233%; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf4Entry.owner_mact}"></span>
+</td></span>
+</tr>
+<tr style="height: 21px;">
+<td style="width: 4.31873%; height: 59px;" rowspan="3">5</td>
+<td style="width: 34.458%; height: 21px;"><strong>In case of commercial vehicle</strong></td>
+<td style="width: 61.2233%; height: 21px; text-transform: capitalize;" colspan="2"></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 34.458%; height: 18px;">Permit details</td>
+<td style="width: 10.1503%; height: 18px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<strong>Permit No:</strong> <span th:text="${pdf4Entry.permitno}"></span></br>&nbsp;&nbsp;<strong>Permit Validity:</strong>Till&nbsp;<span th:text="${pdf4Entry.permitvalidity}"></span></td>
+</tr>
+<tr style="height: 20px;">
+<td style="width: 34.458%; height: 20px;">Fitness details</td>
+<td style="width: 10.1503%; height: 20px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;Fitness Certificate Validity : Till&nbsp; <span th:text="${pdf4Entry.fitcertval}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.31873%; height: 18px;">6</td>
+<td style="width: 34.458%; height: 18px;">Whether the owner reported the accident to the Insurance Company</td>
+<td style="width: 10.1503%; height: 18px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf4Entry.owner_report_acc}"></span></td>
+</tr>
+</tbody>
+
+<div class="footer">
+e-DAR  Detailed Accident Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Date of Generation&nbsp;<span th:text="${pdf4Entry.currentDate}"></span>
+  </div> 
+</table><br>
+
+<table style="border-collapse: collapse; width: 100%;" border="0">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 100%; height: 18px;" colspan="10"><strong>Verification:</strong></td>
+</tr><br>
+<tr style="height: 54px;">
+<td style="width: 10%; height: 54px;" colspan="10">Verified at&nbsp;<strong><u><span style="text-transform:lowercase;" th:text="${pdf4Entry.psName}"></span></u></strong>&nbsp;&nbsp;on &nbsp;<u><strong><span th:text="${pdf4Entry.footerDate}"></span></strong></u>&nbsp; that the contents of the above form are true to my knowledge and the documents attached are true copies of their originals.</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px;" colspan="10"><strong>Documents attached:</strong></td>
+</tr>
+
+ <tr style="height: 18px;">
+<td style="width: 10%; height: 18px;" colspan="10">i.&nbsp; &nbsp; ID/address proof &nbsp;<span th:if="${pdf4Entry.form4AdressProof == '1'}" ><img src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/yes.png" alt="Attached" width="15" height="15" /></span>
+<span th:unless="${pdf4Entry.form4AdressProof == '1'}" >
+<img src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/no.png" alt="Not Attached" width="15" height="15" />
+</span></td>
+</tr>
+<tr>
+<td style="width: 10%;" colspan="10">ii.&nbsp; &nbsp;Registration Certificate &nbsp;<span th:if="${pdf4Entry.form4RegCertificate == '1'}" ><img src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/yes.png" alt="Attached" width="15" height="15" /></span>
+<span th:unless="${pdf4Entry.form4RegCertificate == '1'}" >
+<img src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/no.png" alt="Not Attached" width="15" height="15" />
+</span></td>
+</tr>
+ <tr>
+<td style="width: 10%;" colspan="10">iii.&nbsp; Driving License of the Driver &nbsp;<span th:if="${pdf4Entry.form4driLicense == '1'}" ><img src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/yes.png" alt="Attached" width="15" height="15" /></span>
+<span th:unless="${pdf4Entry.form4driLicense == '1'}" >
+<img src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/no.png" alt="Not Attached" width="15" height="15" />
+</span></td>
+</tr>
+<tr>
+<td style="width: 10%;" colspan="10">iv.&nbsp; Insurance Policy &nbsp;<span th:if="${pdf4Entry.form4InsurancePolicy == '1'}" ><img src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/yes.png" alt="Attached" width="15" height="15" /></span>
+<span th:unless="${pdf4Entry.form4InsurancePolicy == '1'}" >
+<img src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/no.png" alt="Not Attached" width="15" height="15" />
+</span></td>
+</tr>
+<tr>
+<td style="width: 10%;" colspan="10">v.&nbsp; &nbsp;Permit &nbsp;<span th:if="${pdf4Entry.form4Permit == '1'}" ><img src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/yes.png" alt="Attached" width="15" height="15" /></span>
+<span th:unless="${pdf4Entry.form4Permit == '1'}" >
+<img src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/no.png" alt="Not Attached" width="15" height="15" />
+</span></td>
+</tr>
+<tr>
+<td style="width: 10%;" colspan="10">vi.&nbsp; Fitness &nbsp;<span th:if="${pdf4Entry.form4Fitness == '1'}" ><img src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/yes.png" alt="Attached" width="15" height="15" /></span>
+<span th:unless="${pdf4Entry.form4Fitness == '1'}" >
+<img src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/no.png" alt="Not Attached" width="15" height="15" />
+</span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px; text-align:right" colspan="8"><strong>&nbsp;Signature&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;" colspan="2"></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px;text-align:right" colspan="8"><strong>&nbsp; Name&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;" colspan="2"><span th:text="${pdf4Entry.ownername}"></span></td>
+</tr>
+<!-- <tr style="height: 18px;">
+<td style="width: 10%; height: 18px;text-align:right" colspan="8"><strong>&nbsp; Designation&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;" colspan="2"><span th:text="${pdf4Entry.shoDesignation}"></span>&nbsp;&nbsp;<strong>(S.H.O./I.O)</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px;text-align:right" colspan="8"><strong>&nbsp; P.I.S./EMPLOYEE No&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;" colspan="2">&nbsp;<span th:text="${pdf4Entry.investigatingOfficerPis}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px;text-align:right" colspan="8"><strong>&nbsp; Phone No.&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;" colspan="2">&nbsp;<span th:text="${pdf4Entry.investigatingOfficerMobile}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px;text-align:right" colspan="8"><strong>&nbsp; P.S&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;text-transform:capitalize;" colspan="2">&nbsp;<span style="text-transform: lowercase;" th:text="${pdf4Entry.psName}"></span></td>
+</tr>
+<tr style="height: 18px;"> -->
+<td style="width: 10%; height: 18px;text-align:right" colspan="8"><strong>&nbsp; Date&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;" colspan="2">&nbsp;<span th:text="${pdf4Entry.footerDate}"></span></td>
+</tr>
+ 
+</tbody>
+</table>
+
+</body>
+</html>

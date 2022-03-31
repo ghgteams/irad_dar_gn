@@ -1,0 +1,874 @@
+<html>
+<head>
+<style type="text/css">
+    body {
+      font: 12pt Georgia, "Times New Roman", Times, serif;
+      line-height: 1.3;
+      /* min-height: 300vh;
+  position: relative;
+  margin: 0; */
+    }
+
+   
+
+    div.footer {
+    
+      display: block;
+      text-align: center;
+      position: running(footer);
+     
+    }
+
+  
+    @page {
+        @bottom-center {
+            content: element(footer);
+        }
+    }
+    #background{
+    padding-left: 245px;
+    position: absolute;
+    
+    /* z-index: 0; */
+    background: white;
+    backgroung-position: center;
+    display: block;
+    /* min-height: 50%; */
+    /* min-width: 50%; */
+    color: yellow;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 271px;
+    
+}
+
+#content{
+    position: absolute;
+    z-index:10;
+}
+
+#bg-text
+{
+    color:lightgrey;
+    font-size:120px;
+    transform:rotate(300deg);
+    -webkit-transform:rotate(300deg);
+    opacity:0.5;
+      z-index: 9999;
+    
+}
+
+  
+                
+  </style>
+  <body class="watermark">
+	<div id="background">
+  <p id="bg-text">e-DAR</p>
+	</div>
+  </head>
+<table style="border-collapse: collapse; width: 100%; height: 32px; margin-left: auto; margin-right: auto;" border="0">
+<tbody>
+<tr style="height: 32px;">
+<td style="width: 100%; height: 32px; text-align: center;">
+<p><strong>FORM-XII
+<img style="float: right;"  th:src="@{${'https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/'+pdf12Entry.stateCode+'_police.jpg'}}" alt="" width="91" height="84" /><img style="float: left;" src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/eDAR_logo1.png" alt="" width="91" height="84" />
+</strong></p>
+<h3><strong>VICTIM IMPACT REPORT</strong></h3>
+<p><strong>Accident Id - <span th:text="${pdf12Entry.accidentId}"></span></strong></p>
+<p>By SLSA to concerned Metropolitan Magistrate within 30 days of conviction and <br>
+to be considered at the time of sentencing</p>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- <table style="border-collapse: collapse; width: 100%; height: 78px; margin-left: auto; margin-right: auto;" border="1">
+<tbody>
+<tr style="height: 27px;">
+<td style="width: 23.2026%; height: 27px;">FIR No.</td>
+<td style="width: 76.7974%; height: 27px; text-transform: capitalize;">&nbsp;<span th:text="${pdf12Entry.firNumber}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 23.2026%; height: 17px;">Date</td>
+<td style="width: 76.7974%; height: 17px; text-transform: capitalize;">&nbsp;<span th:text="${pdf12Entry.firDateTime}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 23.2026%; height: 17px;">Under Section</td>
+<td style="width: 76.7974%; height: 17px; text-transform: capitalize;">&nbsp;<span th:text="${pdf12Entry.section}"></span>/&nbsp;<span th:text="${pdf12Entry.act}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 23.2026%; height: 17px;">Police Station</td>
+<td style="width: 76.7974%; height: 17px; text-transform: capitalize;">&nbsp;<span th:text="${pdf12Entry.policeStationName}"></span>(P.S),<span th:text="${pdf12Entry.district}"></span>,<span th:text="${pdf12Entry.state}"></span></td>
+</tr>
+</tbody>
+</table> -->
+<table style="border-collapse: collapse; width: 100%; margin-left: auto; margin-right: auto; height: 432px;" border="1">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 4.32845%; text-align: center; height: 18px;"><strong>S.No</strong></td>
+<td style="width: 39.7855%; text-align: center; height: 18px;"><strong>Description</strong></td>
+<td style="width: 55.886%; text-align: center; height: 18px;"><strong>Particulars</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 18px;">1.</td>
+<td style="width: 39.7855%; height: 18px;">FIR No., date and under Section(s)</td>
+<td style="width: 55.886%; height: 18px; text-transform: capitalize;">&nbsp;<span th:text="${pdf12Entry.firNumber}"></span>&nbsp;,&nbsp;<span th:text="${pdf12Entry.firDateTime}"></span>&nbsp;<br><span th:text="${pdf12Entry.section}"></span><br><span th:text="${pdf12Entry.act}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 18px;">2.</td>
+<td style="width: 39.7855%; height: 18px;">Name of Police Station</td>
+<td style="width: 55.886%; height: 18px; text-transform: capitalize;">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf12Entry.policeStationName}"></span>(P.S),<span span style="text-transform: lowercase;" th:text="${pdf12Entry.district}"></span>,<span span style="text-transform: lowercase;" th:text="${pdf12Entry.state}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 18px;">3.</td>
+<td style="width: 39.7855%; height: 18px;">Date, time and place of offence</td>
+<td style="width: 55.886%; height: 18px; text-transform: capitalize;">&nbsp;&nbsp;<span th:text="${pdf12Entry.accidentDatetime}"></span>&nbsp;<br>
+<span th:text="${pdf12Entry.landmarks}"></span>&nbsp;/&nbsp;<span th:text="${pdf12Entry.roadDetails}"></span></td>
+</tr>
+
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 18px;"rowspan="5" >4.</td>
+<td style="width: 39.7855%; height: 18px;">Nature of injury/loss suffered by the victim(s)</td>
+<td style="width: 55.886%; height: 18px;">&nbsp;&nbsp;<!-- <span th:text="${pdf12Entry.natureOfInjurySufferedByVictim}"></span> --></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 39.7855%; height: 18px;">i.&nbsp; &nbsp;Physical harm</td>
+<td style="width: 55.886%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.physicalHarm}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 39.7855%; height: 18px;">ii.&nbsp; Emotional harm</td>
+<td style="width: 55.886%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.emotionalHarm}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 39.7855%; height: 18px;">iii. Damage/loss of property</td>
+<td style="width: 55.886%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.damageLossProperty}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 39.7855%; height: 18px;">iv. Any other loss/injury</td>
+<td style="width: 55.886%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.anyOtherLoss}"></span></td>
+</tr>
+
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 18px;">5.</td>
+<td style="width: 39.7855%; height: 18px;">Brief description of offence(s) in which the accused has been convicted</td>
+<td style="width: 55.886%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.offenceDescription}"></span></td>
+</tr>
+<span th:if="${pdf12Entry.injurySeverity == '1'}" >
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 18px;">6.</td>
+<td style="width: 39.7855%; height: 18px;">Name of the victim</td>
+<td style="width: 55.886%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedName}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 18px;">7.</td>
+<td style="width: 39.7855%; height: 18px;">Father&lsquo;s /Spouse&lsquo;s name</td>
+<td style="width: 55.886%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedFatherOrSpouseName}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 18px;">8.</td>
+<td style="width: 39.7855%; height: 18px;">Age</td>
+<td style="width: 55.886%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedAge}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 18px;">9.</td>
+<td style="width: 39.7855%; height: 18px;">Gender</td>
+<td style="width: 55.886%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedGender}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 18px;">10.</td>
+<td style="width: 39.7855%; height: 18px;">Marital status</td>
+<td style="width: 55.886%; height: 18px;text-transform:capitalize;">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf12Entry.deceasedMaritalStatus}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 54px;" rowspan="3">11.</td>
+<td style="width: 95.6715%; height: 18px;" colspan="2">Addresses:</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 39.7855%; height: 18px;"><strong>Permanent</td>
+<td style="width: 55.886%; height: 18px; text-transform:capitalize;">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf12Entry.permanentAddress}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 39.7855%; height: 18px;"><strong>Present</td>
+<td style="width: 55.886%; height: 18px;text-transform:capitalize;">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf12Entry.presentAddress}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 18px;">12.</td>
+<td style="width: 95.6715%; height: 18px;" colspan="2">Contact information:</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 18px;">&nbsp;</td>
+<td style="width: 39.7855%; height: 18px;"><strong>Mobile</strong></td>
+<td style="width: 55.886%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.mobileNumber}"></span></td>
+</tr>
+
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 18px;">&nbsp;</td>
+<td style="width: 39.7855%; height: 18px;"><strong>Email ID</strong></td>
+<td style="width: 55.886%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.emailId}"></span></td>
+</tr>
+</span>
+
+<span th:unless="${pdf12Entry.injurySeverity == '1'}" >
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 18px;">6.</td>
+<td style="width: 39.7855%; height: 18px;">Name of the victim</td>
+<td style="width: 55.886%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredName}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 18px;">7.</td>
+<td style="width: 39.7855%; height: 18px;">Father&lsquo;s /Spouse&lsquo;s name</td>
+<td style="width: 55.886%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredFatherOrSpouseName}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 18px;">8.</td>
+<td style="width: 39.7855%; height: 18px;">Age</td>
+<td style="width: 55.886%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredAge}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 18px;">9.</td>
+<td style="width: 39.7855%; height: 18px;">Gender</td>
+<td style="width: 55.886%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredGender}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 18px;">10.</td>
+<td style="width: 39.7855%; height: 18px;">Marital status</td>
+<td style="width: 55.886%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredMaritalStatus}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 54px;" rowspan="3">11.</td>
+<td style="width: 95.6715%; height: 18px;" colspan="2">Addresses:</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 39.7855%; height: 18px;"><strong>Permanent</strong></td>
+<td style="width: 55.886%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.permanentAddress}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 39.7855%; height: 18px;"><strong>Present</strong></td>
+<td style="width: 55.886%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.presentAddress}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 18px;">12.</td>
+<td style="width: 95.6715%; height: 18px;" colspan="2">Contact information:</td>
+</tr>
+
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 18px;">&nbsp;</td>
+<td style="width: 39.7855%; height: 18px;"><strong>Mobile</strong></td>
+<td style="width: 55.886%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.mobileNumber}"></span></td>
+</tr>
+
+<tr style="height: 18px;">
+<td style="width: 4.32845%; height: 18px;">&nbsp;</td>
+<td style="width: 39.7855%; height: 18px;"><strong>Email ID</strong></td>
+<td style="width: 55.886%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.emailId}"></span></td>
+</tr>
+</span>
+</tbody>
+<div class="footer">
+e-DAR  Detailed Accident Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Date of Generation&nbsp;<span th:text="${pdf12Entry.currentDate}"></span>
+  </div>
+</table>
+<span th:if="${pdf12Entry.injurySeverity == '1'}" >
+<p>&nbsp; &nbsp;<em>I.&nbsp; &nbsp;<strong>Death Case</strong></em></p>
+<table style="border-collapse: collapse; width: 100%; margin-left: auto; margin-right: auto; height: 620px;" border="1">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; text-align: center; height: 18px;">S.No.</td>
+<td style="width: 36.129%; text-align: center; height: 18px;">Description</td>
+<td style="width: 60%; text-align: center; height: 18px;" colspan="3">Particulars</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; height: 18px;">13.</td>
+<td style="width: 36.129%; height: 18px;">Name of the deceased</td>
+<td style="width: 60%; height: 18px;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedName}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; height: 18px;">14.</td>
+<td style="width: 36.129%; height: 18px;">Father&lsquo;s/Spouse&lsquo;s name</td>
+<td style="width: 60%; height: 18px;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedFatherOrSpouseName}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; height: 18px;">15.</td>
+<td style="width: 36.129%; height: 18px;">Age of the deceased</td>
+<td style="width: 60%; height: 18px;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedAge}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; height: 18px;">16.</td>
+<td style="width: 36.129%; height: 18px;">Gender of the deceased</td>
+<td style="width: 60%; height: 18px;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedGender}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; height: 18px;">17.</td>
+<td style="width: 36.129%; height: 18px;">Marital status of the deceased</td>
+<td style="width: 60%; height: 18px;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedMaritalStatus}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; height: 18px;">18.</td>
+<td style="width: 36.129%; height: 18px;">Occupation of the deceased</td>
+<td style="width: 60%; height: 18px;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedOccupation}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; height: 18px;">19.</td>
+<td style="width: 36.129%; height: 18px;">Income of the deceased</td>
+<td style="width: 60%; height: 18px;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedIncome}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; height: 36px;" rowspan="2">20.</td>
+<td style="width: 96.129%; height: 18px;" colspan="4"><strong>Name, age and relationship of legal representatives of deceased:</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 36.129%; height: 18px; text-align: center;"><strong>Name</strong></td>
+<td style="width: 20%; height: 18px; text-align: center;"><strong>Age</strong></td>
+<td style="width: 20%; height: 18px; text-align: center;"><strong>Gender</strong></td>
+<td style="width: 20%; height: 18px; text-align: center;"><strong>Relation</strong></td>
+</tr>
+
+<tr style="height: 17px;"th:each="legalrepresentative , iStat : ${pdf12Entry.deceasedLegalRepresentatives}">
+<td style="width: 3.87097%; height: 17px; text-align: center;"><span th:text="${iStat.index+1}"></span></td>
+<td style="width: 36.129%; height: 17px;">&nbsp;<span th:text="${legalrepresentative.name}"></span></td>
+<td style="width: 20%; height: 17px;">&nbsp;<span th:text="${legalrepresentative.age}"></span></td>
+<td style="width: 20%; height: 17px;">&nbsp;<span th:text="${legalrepresentative.gender}"></span></td>
+<td style="width: 20%; height: 17px;">&nbsp;<span th:text="${legalrepresentative.relation}"></span></td>
+</tr>
+
+<tr style="height: 17px;">
+<td style="width: 3.87097%; text-align: center; height: 17px;">21.</td>
+<td style="width: 96.129%; height: 17px;" colspan="4"><strong>Details of losses suffered</strong></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 3.87097%; height: 17px;">&nbsp;</td>
+<td style="width: 96.129%; height: 17px;" colspan="4"><strong>Pecuniary Losses:</strong></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 3.87097%; height: 17px; text-align: center;">(i)</td>
+<td style="height: 17px; width: 56.129%;" colspan="2">Income of the deceased (A)</td>
+<td style="height: 17px; width: 40%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedIncome}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; height: 18px; text-align: center;">(ii)</td>
+<td style="height: 18px; width: 56.129%;" colspan="2">Add-Future Prospects (B)</td>
+<td style="height: 18px; width: 40%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedAddFutureProspects}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; height: 18px; text-align: center;">(iii)</td>
+<td style="height: 18px; width: 56.129%;" colspan="2">Less-Personal expenses of the deceased (C)</td>
+<td style="height: 18px; width: 40%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedLessPersonalExpenses}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; height: 18px; text-align: center;">(iv)</td>
+<td style="height: 18px; width: 56.129%;" colspan="2">Monthly loss of dependency [(A+B) &ndash; C = D]</td>
+<td style="height: 18px; width: 40%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedMonthlyLossDependency}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; height: 18px; text-align: center;">(v)</td>
+<td style="height: 18px; width: 56.129%;" colspan="2">Annual loss of dependency (D x 12)</td>
+<td style="height: 18px; width: 40%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf12Entry.AnnualLossDependency}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; height: 18px; text-align: center;">(vi)</td>
+<td style="height: 18px; width: 56.129%;" colspan="2">Multiplier (E)</td>
+<td style="height: 18px; width: 40%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedMultiplier}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; height: 18px; text-align: center;">(vii)</td>
+<td style="height: 18px; width: 56.129%;" colspan="2">Total loss of dependency (D x 12 x E = F)</td>
+<td style="height: 18px; width: 40%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedTotalLossDependency}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; height: 18px; text-align: center;">(viii)</td>
+<td style="height: 18px;" colspan="2">Medical Expenses</td>
+<td style="height: 18px;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedMedicalExpenses}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; text-align: center; height: 18px;">(ix)</td>
+<td style="height: 18px;" colspan="2">Funeral Expenses</td>
+<td style="height: 18px;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedFuneralExpenses}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; text-align: center; height: 18px;">(x)</td>
+<td style="height: 18px;" colspan="2">Any other pecuniary loss/damage</td>
+<td style="height: 18px;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedPecuniaryLossDamage}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; text-align: center; height: 18px;">&nbsp;</td>
+<td style="height: 18px;" colspan="2">Non-Pecuniary Losses:</td>
+<td style="height: 18px;" colspan="2">&nbsp;&nbsp;</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; text-align: center; height: 18px;">(xi)</td>
+<td style="height: 18px;" colspan="2">Loss of consortium</td>
+<td style="height: 18px;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedLossOfConsortium}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; text-align: center; height: 18px;">(xii)</td>
+<td style="height: 18px;" colspan="2">Loss of love and affection</td>
+<td style="height: 18px;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedLossOfLoveAffection}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; text-align: center; height: 18px;">(xiii)</td>
+<td style="height: 18px;" colspan="2">Loss of estate</td>
+<td style="height: 18px;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedLossOfEstate}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; text-align: center; height: 18px;">(xiv)</td>
+<td style="height: 18px;" colspan="2">Emotional harm/trauma, mental and physical shock etc.</td>
+<td style="height: 18px;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedEmotionalHarmTaruma}"></span></td>
+</tr>
+<tr style="height: 16px;">
+<td style="width: 3.87097%; text-align: center; height: 16px;">(xv)</td>
+<td style="height: 16px;" colspan="2">Post-traumatic stress disorder (anxiety, depression, hostility, insomnia, self-destructive behaviour, nightmares, agitation, social isolation, etc.) panic disorder or phobia(a) which got triggered by the incident/death of the deceased victim.</td>
+<td style="height: 16px;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedPostTraumaticDisorder}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; text-align: center; height: 18px;">(xv)</td>
+<td style="height: 18px;" colspan="2">Any other non-pecuniary loss/damage</td>
+<td style="height: 18px;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedOtherNonPecuniaryLoss}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.87097%; text-align: center; height: 18px;">&nbsp;</td>
+<td style="height: 18px;" colspan="2"><em><strong>Total loss suffered</strong></em></td>
+<td style="height: 18px;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf12Entry.deceasedTotalLossSuffered}"></span></td>
+</tr>
+</tbody>
+<div class="footer">
+e-DAR  Detailed Accident Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Dated of Generation&nbsp;<span th:text="${pdf12Entry.currentDate}"></span>
+  </div>
+</table>
+</span>
+<span th:unless="${pdf12Entry.injurySeverity == '1'}" >
+<p>&nbsp; &nbsp; <em>II.&nbsp; &nbsp;<strong>Injury Case</strong></em></p>
+<table style="border-collapse: collapse; width: 100%; margin-left: auto; margin-right: auto; height: 900px;" border="1">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: center; height: 18px;"><strong>S.No.</strong></td>
+<td style="width: 44.4591%; text-align: center; height: 18px;"><strong>Description</strong></td>
+<td style="text-align: center; height: 18px; width: 48.7901%;" colspan="3"><strong>Particulars</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: left; height: 18px;">22.</td>
+<td style="width: 44.4591%; text-align: left; height: 18px;">Name of the injured</td>
+<td style="text-align: left; height: 18px; width: 48.7901%;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredName}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: left; height: 18px;">23.</td>
+<td style="width: 44.4591%; text-align: left; height: 18px;">Father's / Spouse's name</td>
+<td style="text-align: left; height: 18px; width: 48.7901%;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredFatherOrSpouseName}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: left; height: 18px;">24.</td>
+<td style="width: 44.4591%; text-align: left; height: 18px;">Age of the injured</td>
+<td style="text-align: left; height: 18px; width: 48.7901%;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredAge}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: left; height: 18px;">25.</td>
+<td style="width: 44.4591%; text-align: left; height: 18px;">Gender of the injured</td>
+<td style="text-align: left; height: 18px; width: 48.7901%;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredGender}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: left; height: 18px;">26.</td>
+<td style="width: 44.4591%; text-align: left; height: 18px;">Marital status of the injured</td>
+<td style="text-align: left; height: 18px; width: 48.7901%;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredMaritalStatus}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: left; height: 18px;">27.</td>
+<td style="width: 44.4591%; text-align: left; height: 18px;">Occupation of the injured</td>
+<td style="text-align: left; height: 18px; width: 48.7901%;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredOccupation}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: left; height: 18px;">28.</td>
+<td style="width: 44.4591%; text-align: left; height: 18px;">Income of the injured</td>
+<td style="text-align: left; height: 18px; width: 48.7901%;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredIncome}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: left; height: 18px;">29.</td>
+<td style="width: 44.4591%; text-align: left; height: 18px;">Nature and description of injury</td>
+<td style="text-align: left; height: 18px; width: 48.7901%;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuryNatureAndDescription}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: left; height: 18px;">30.</td>
+<td style="width: 44.4591%; text-align: left; height: 18px;">Medical treatment taken by the injured</td>
+<td style="text-align: left; height: 18px; width: 48.7901%;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredMedicalTreatment}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: left; height: 18px;">31.</td>
+<td style="width: 44.4591%; text-align: left; height: 18px;">Name of hospital and period of hospitalization</td>
+<td style="text-align: left; height: 18px; width: 48.7901%;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.hospitalNameAndHospitalizationPeriod}"></span>&nbsp;and&nbsp;<span th:text="${pdf12Entry.hospitalPeriod}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: left; height: 18px;">32.</td>
+<td style="width: 44.4591%; text-align: left; height: 18px;">Details of surgeries, if undergone</td>
+<td style="text-align: left; height: 18px; width: 48.7901%;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.surgeriesDetails}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: left; height: 18px;">33.</td>
+<td style="width: 44.4591%; text-align: left; height: 18px;">Whether any permanent disability? If yes, give details</td>
+<td style="text-align: left; height: 18px; width: 48.7901%;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.permanentDisability}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: left; height: 18px;">34.</td>
+<td style="width: 44.4591%; text-align: left; height: 18px;">Whether the injured got reimbursement of medical expenses</td>
+<td style="text-align: left; height: 18px; width: 48.7901%;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.reimbursementOfMedicalExpenses}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: left; height: 18px;">35.</td>
+<td style="width: 93.2492%; text-align: left; height: 18px;" colspan="4"><strong>Details of family/dependents of the injured:</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; height: 18px;">&nbsp;</td>
+<td style="width: 44.4591%; height: 18px; text-align: center;">Name</td>
+<td style="width: 11.9787%; height: 18px; text-align: center;">Age</td>
+<td style="width: 12.4517%; height: 18px; text-align: center;">Gender</td>
+<td style="width: 24.3597%; height: 18px; text-align: center;">Relation</td>
+</tr>
+<tr style="height: 17px;"th:each="legalrepresentative , iStat : ${pdf12Entry.deceasedLegalRepresentatives}">
+<td style="width: 3.87097%; height: 17px; text-align: center;"><span th:text="${iStat.index+1}"></span></td>
+<td style="width: 36.129%; height: 17px;">&nbsp;<span th:text="${legalrepresentative.name}"></span></td>
+<td style="width: 20%; height: 17px;">&nbsp;<span th:text="${legalrepresentative.age}"></span></td>
+<td style="width: 20%; height: 17px;">&nbsp;<span th:text="${legalrepresentative.gender}"></span></td>
+<td style="width: 20%; height: 17px;">&nbsp;<span th:text="${legalrepresentative.relation}"></span></td>
+</tr>
+
+<tr style="height: 18px;">
+<td style="width: 6.75079%; height: 18px;">36.</td>
+<td style="width: 93.2492%; height: 18px;" colspan="4"><strong>Details of losses suffered&nbsp;</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 100%; height: 18px;" colspan="5"><strong>Pecuniary Losses:</strong></td>
+</tr>
+<tr style="height: 36px;">
+<td style="width: 6.75079%; text-align: center; height: 36px;">(i)</td>
+<td style="width: 44.4591%; height: 36px;">Expenditure incurred on treatment, conveyance, special diet, attendant etc.</td>
+<td style="width: 48.7901%; height: 36px;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredExpenditureOnTreatment}"></span></td>
+</tr>
+<tr style="height: 54px;">
+<td style="width: 6.75079%; text-align: center; height: 54px;">(ii)</td>
+<td style="width: 44.4591%; height: 54px;">If treatment is still continuing, give the estimate of expenditure likely to be incurred on future treatment</td>
+<td style="width: 48.7901%; height: 54px;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredTreatmentExpenditureEstimation}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: center; height: 18px;">(iii)</td>
+<td style="width: 44.4591%; height: 18px;">Loss of income</td>
+<td style="width: 48.7901%; height: 18px;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredLossOfIncome}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: center; height: 18px;">(iv)</td>
+<td style="width: 44.4591%; height: 18px;">Any other loss which may require any special treatment or aid to the injured for the rest of his life</td>
+<td style="width: 48.7901%; height: 18px;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredSpecialTreatment}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: center; height: 18px;">(v)</td>
+<td style="width: 44.4591%; height: 18px;">Percentage of disability assessed and nature of disability as permanent or temporary</td>
+<td style="width: 48.7901%; height: 18px;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.ijuredNatureOfDisability}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: center; height: 18px;">(vi)</td>
+<td style="width: 44.4591%; height: 18px;">Percentage of loss of earning capacity in relation to disability</td>
+<td style="width: 48.7901%; height: 18px;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredLossOfEarningCapacity}"></span>%</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: center; height: 18px;">(vii)</td>
+<td style="width: 44.4591%; height: 18px;">Loss of future Income -(Income * % Earning Capacity * Multiplier)</td>
+<td style="width: 48.7901%; height: 18px;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredLossOfFutureIncome}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: center; height: 18px;">(viii)</td>
+<td style="width: 44.4591%; height: 18px;">Any other pecuniary loss/damage</td>
+<td style="width: 48.7901%; height: 18px;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredPecuniaryLoss}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: center; height: 18px;">&nbsp;</td>
+<td style="width: 93.2492%; height: 18px;" colspan="4"><em><strong>Non-Pecuniary Losses:</strong></em></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: center; height: 18px;">(i)</td>
+<td style="width: 44.4591%; height: 18px;">Pain and suffering</td>
+<td style="width: 48.7901%; height: 18px;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredPainAndSuffering}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: center; height: 18px;">(ii)</td>
+<td style="width: 44.4591%; height: 18px;">Loss of amenities of life, inconvenience, hardships, disappointment, frustration, mental stress, dejectment and unhappiness in future life etc</td>
+<td style="height: 18px; width: 48.7901%;" colspan="3">&nbsp; &nbsp;<span th:text="${pdf12Entry.injuredLossOfAmenities}"></span></td>
+</tr>
+<tr style="height: 108px;">
+<td style="width: 6.75079%; text-align: center; height: 108px;">(iii)</td>
+<td style="width: 44.4591%; height: 108px;">Post-traumatic stress disorder (anxiety, depression, hostility, insomnia, self-destructive behaviour, nightmares, agitation, social isolation, etc.) panic disorder or phobia(a) which got triggered by the incident.</td>
+<td style="height: 108px; width: 48.7901%;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredPostTraumaticDisorder}"></span></td>
+</tr>
+<tr style="height: 36px;">
+<td style="width: 6.75079%; text-align: center; height: 36px;">(iv)</td>
+<td style="width: 44.4591%; height: 36px;">Emotional harm/trauma, mental and physical shock etc</td>
+<td style="height: 36px; width: 48.7901%;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredEmotionalHarmTaruma}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: center; height: 18px;">(v)</td>
+<td style="width: 44.4591%; height: 18px;">Disfiguration</td>
+<td style="height: 18px; width: 48.7901%;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredDisfiguration}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: center; height: 18px;">(vi)</td>
+<td style="width: 44.4591%; height: 18px;">Loss of marriage prospects</td>
+<td style="height: 18px; width: 48.7901%;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredLossOfMarriageProspects}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: center; height: 18px;">(vii)</td>
+<td style="width: 44.4591%; height: 18px;">Loss of Reputation</td>
+<td style="height: 18px; width: 48.7901%;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredLossOfReputation}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: center; height: 18px;">(viii)</td>
+<td style="width: 44.4591%; height: 18px;">Any other non-pecuniary loss/damage</td>
+<td style="height: 18px; width: 48.7901%;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredOtherNonPecuniaryLoss}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.75079%; text-align: center; height: 18px;">&nbsp;</td>
+<td style="width: 44.4591%; height: 18px;"><strong><em>Total loss suffered</em></strong></td>
+<td style="height: 18px; width: 48.7901%;" colspan="3">&nbsp;&nbsp;<span th:text="${pdf12Entry.injuredTotalLossSuffered}"></span></td>
+</tr>
+</tbody>
+<div class="footer">
+e-DAR  Detailed Accident Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Date of Generation&nbsp;<span th:text="${pdf12Entry.currentDate}"></span>
+  </div>
+</table>
+</span>
+<p><strong><em>&nbsp; &nbsp;III.&nbsp; &nbsp; Damage/Loss to the property</em></strong></p>
+<table style="border-collapse: collapse; width: 100%; margin-left: auto; margin-right: auto; height: 54px;" border="1">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 6.69575%; text-align: center; height: 18px;"><strong>S.No.</strong></td>
+<td style="width: 44.6391%; text-align: center; height: 18px;"><strong>Description</strong></td>
+<td style="width: 48.6651%; text-align: center; height: 18px;"><strong>Particular</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.69575%; height: 18px;">37.</td>
+<td style="width: 44.6391%; height: 18px;">Description of the property damaged/lost</td>
+<td style="width: 48.6651%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.propertyLossDamage}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.69575%; height: 18px;">38.</td>
+<td style="width: 44.6391%; height: 18px;">The value of loss suffered</td>
+<td style="width: 48.6651%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.lossSuffered}"></span></td>
+</tr>
+</tbody>
+</table>
+
+<p><em><strong>&nbsp; &nbsp;IV.&nbsp; &nbsp; Conduct of the accused</strong></em></p>
+
+<table style="border-collapse: collapse; width:100%; margin-left: auto; margin-right: auto;" border="1">
+<tbody>
+<tr style="height: 10px;">
+<td style="width: 6.55984%; height: 10px; text-align: center;">S.No.</td>
+<td style="width: 60.1068%; height: 10px; text-align: center;">Description</td>
+<td style="width: 33.3333%; height: 10px; text-align: center;">Particular</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.55984%; height: 18px;">39.</td>
+<td style="width: 60.1068%; height: 18px;">Whether the accused fled from the Spot If so, when he/ she appeared before Police/ Court or arrested?</td>
+<td style="width: 33.3333%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.accusedFledFromSpot}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.55984%; height: 18px;">40.</td>
+<td style="width: 60.1068%; height: 18px;">Whether the Accused reported the accident to the Police/ family of the victim</td>
+<td style="width: 33.3333%; height: 18px;">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf12Entry.accusedReportedAccidentToPolice}"></span></td>
+</tr>
+<tr>
+<td>41.</td>
+<td>
+i.&nbsp; &nbsp; Whether the Accused provided any assistance to the victim?</br>
+ii.&nbsp; &nbsp; Whether the Accused took the victim to the hospital?</br>
+iii.&nbsp; &nbsp;Whether the Accused visited the victim at the hospital?</br>
+</td>
+<td>&nbsp;&nbsp;<span th:text="${pdf12Entry.accusedProvidedAssistanceToVictim}"></span></br>
+&nbsp;&nbsp;<span th:text="${pdf12Entry.accusedTookVictimToHospital}"></span></br>
+&nbsp;&nbsp;<span th:text="${pdf12Entry.accusedVisitedVictimAtHospital}"></span></br></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.55984%; height: 18px;">42.</td>
+<td style="width: 60.1068%; height: 18px;">Whether the Accused remained at the spot till police arrived</td>
+<td style="width: 33.3333%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.accusedRemainedAtspot}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.55984%; height: 18px;">43.</td>
+<td style="width: 60.1068%; height: 18px;">Whether the Accused cooperated in the investigation</td>
+<td style="width: 33.3333%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.accusedCooperatedInvestigation}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.55984%; height: 18px;">44.</td>
+<td style="width: 60.1068%; height: 18px;">Whether the Accused removed his/ her vehicle from the spot before police arrived&nbsp; arrived</td>
+<td style="width: 33.3333%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.accusedRemovedVehicleFromSpot}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.55984%; height: 18px;">45.</td>
+<td style="width: 60.1068%; height: 18px;">Whether the Accused paid compensation/ medical expenses to victim/ his family.</td>
+<td style="width: 33.3333%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.accusedPaidCompensation}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.55984%; height: 18px;">46.</td>
+<td style="width: 60.1068%; height: 18px;">Whether the Accused has previous convictions</td>
+<td style="width: 33.3333%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.accusedPreviousConvictions}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.55984%; height: 18px;">47.</td>
+<td style="width: 60.1068%; height: 18px;">Whether the Accused is/ was a close relative or friend of the victim</td>
+<td style="width: 33.3333%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.accusedCloseRelative}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.55984%; height: 18px;">48.</td>
+<td style="width: 60.1068%; height: 18px;">Age of the Accused</td>
+<td style="width: 33.3333%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.accusedAge}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.55984%; height: 18px;">49.</td>
+<td style="width: 60.1068%; height: 18px;">Gender of the Accused</td>
+<td style="width: 33.3333%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.accusedGender}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.55984%; height: 18px;">50.</td>
+<td style="width: 60.1068%; height: 18px;">Whether accused suffered injuries during the accident</td>
+<td style="width: 33.3333%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.accusedSufferedInjuries}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.55984%; height: 18px;">51.</td>
+<td style="width: 60.1068%; height: 18px;">Whether the Accused discharged the duties under Sections 132 and 134 of the MV Act, 1988? If no, whether the Accused has been prosecuted under Section 187 of MV Act</td>
+<td style="width: 33.3333%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.accusedDischargedDuties}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.55984%; height: 18px;">52.</td>
+<td style="width: 60.1068%; height: 18px;">Whether the Driver has been previously involved in a motor accident case If Yes, provide following details: FIR Number and Police Station</td>
+<td style="width: 33.3333%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.motorAccidentCase}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.55984%; height: 18px;">53.</td>
+<td style="width: 60.1068%; height: 18px;">In case the driver fled from the spot, did the owner comply with the provisions of Section 133 of MV Act</td>
+<td style="width: 33.3333%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.driverFledFromSpot}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.55984%; height: 18px;">54.</td>
+<td style="width: 60.1068%; height: 18px;">Any other information regarding the conduct of the Accused</td>
+<td style="width: 33.3333%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.accusedOtherConductInformation}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 6.55984%; height: 18px;">55.</td>
+<td style="width: 60.1068%; height: 18px;">Apparent contributing circumstance</td>
+<td style="width: 33.3333%; height: 18px;">&nbsp;&nbsp;<span th:text="${pdf12Entry.apparentContributingCircumstances}"></span></td>
+</tr>
+
+<tr>
+<td style="width: 6.55984%; height: 18px;">56.</td>
+<td style="width: 60.1068%; height: 18px;">Aggressive Driving</td>
+<td style="width: 33.3333%; height: 18px;">&nbsp;<span th:text="${pdf12Entry.aggressiveDriving}"></span></td>
+</tr>
+
+<tr>
+<td>57.</td>
+<td>Irresponsible Behaviour</td>
+<td>&nbsp;<span th:text="${pdf12Entry.irresponsibleBehaviour}"></span></td>
+</tr>
+</tbody>
+
+<div class="footer">
+e-DAR  Detailed Accident Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Date of Generation&nbsp;<span th:text="${pdf12Entry.currentDate}"></span>
+  </div>
+</table>
+<br>
+<table style="border-collapse: collapse; width: 100%; height: 134px;" border="0">
+<tbody>
+<tr style="height: 134px;">
+<td style="width: 100%; height: 134px;">
+<ol>
+<li><strong><em> Paying capacity of the accused </em></strong></li>
+</ol>
+<p>The accused has submitted the affidavit of his assets and income .The particulars given by the accused in his affidavit have been verified through SDM/Police/Prosecution and after considering the same, paying capacity of the accused is assessed as under:</p>
+<p>1.Annual Income    :&nbsp;&nbsp;Rs.<span th:text="${pdf12Entry.deceasedcapannualincome}"></span></p>
+<p>2.Movable Asset    :<span th:text="${pdf12Entry.deceasedmovableasset}"></span>&nbsp;&nbsp;Lakhs</p>
+<p>3.Immovable Asset  :<span th:text="${pdf12Entry.deceasedimmovableasset}"></span>&nbsp;&nbsp;Lakhs</p>
+<ol>
+<li><strong><em> Recommendations of State Legal Services Authority </em></strong></li>
+</ol>
+<p>After taking into consideration the gravity of the offense, severity of mental/physical harm/injuries suffered by the victim(s); losses suffered by the victim(s) and the paying capacity of the accused, the recommendations of the Committee are as under: -</p>
+<p><span th:text="${pdf12Entry.deceasedrecommendation}"></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table style="border-collapse: collapse; width: 100%;" border="0">
+<tbody>
+<tr>
+<td style="width: 30%;" colspan="3"><strong>Place:</strong></td>
+<td style="width: 10%; text-align:right;" colspan="7"><strong>Member Secretary</strong></td>
+</tr>
+<tr>
+<td style="width: 30%;" colspan="3"><strong>Date:</strong></td>
+<td style="width: 10%; text-align:right;" colspan="7"><strong>State Legal Services Authority</strong></td>
+</tr><br>
+<tr>
+<td style="width: 100%;" colspan="10"><strong>Documents considered and attached to the report</td>
+</tr>
+<span th:if="${pdf12Entry.injurySeverity == '1'}" >
+<tr>
+<td style="width: 100%;" colspan="10"><strong>In Death cases:</strong></td>
+</tr>
+<tr>
+<td style="width: 100%;" colspan="10">1.&nbsp; &nbsp;Death certificate</td>
+</tr>
+<tr>
+<td style="width: 100%;" colspan="10">2.&nbsp; &nbsp;Proof of age</td>
+</tr>
+<tr>
+<td style="width: 100%;" colspan="10">3.&nbsp; &nbsp;Proof of Occupation</td>
+</tr>
+<tr>
+<td style="width: 100%;" colspan="10">4.&nbsp; &nbsp;Proof of legal representatives</td>
+</tr>
+<tr>
+<td style="width: 100%;" colspan="10">5.&nbsp; &nbsp;Treatment record,medical bills and other expenditure</td>
+</tr>
+<tr>
+<td style="width: 100%;" colspan="10">6.&nbsp; &nbsp;Bank Account Statement</td>
+</tr>
+<tr>
+<td style="width: 100%;" colspan="10">7.&nbsp; &nbsp;Other Document</td>
+</tr>
+<tr>
+<td style="width: 100%;" colspan="10">&nbsp;</td>
+</tr>
+</span>
+<span th:unless="${pdf12Entry.injurySeverity == '1'}" >
+<tr>
+<td style="width: 100%;" colspan="10"><strong>In Injury Cases:</strong></td>
+</tr>
+<tr>
+<td style="width: 100%;" colspan="10">1.&nbsp; &nbsp;Multi angle photographs of the injured</td>
+</tr>
+<tr>
+<td style="width: 100%;" colspan="10">2.&nbsp; &nbsp;Proof of age</td>
+</tr>
+<tr>
+<td style="width: 100%;" colspan="10">3.&nbsp; &nbsp;Proof of Occupation</td>
+</tr>
+<tr>
+<td style="width: 100%;" colspan="10">4.&nbsp; &nbsp;Treatment record,medical bills and other expenditure</td>
+</tr>
+<tr>
+<td style="width: 100%;" colspan="10">5.&nbsp; &nbsp;Disability Certificate</td>
+</tr>
+<tr>
+<td style="width: 100%;" colspan="10">6.&nbsp; &nbsp;Proof of absence</td>
+</tr>
+<tr>
+<td style="width: 100%;" colspan="10">7.&nbsp; &nbsp;Proof of reimbursement of medical expenses</td>
+</tr>
+<tr>
+<td style="width: 100%;" colspan="10">8.&nbsp; &nbsp;Any other document</td>
+</tr>
+</span>
+</tbody>
+</table>
+</html>

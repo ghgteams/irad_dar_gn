@@ -1,0 +1,240 @@
+<html>
+<head>
+<style type="text/css">
+    body {
+      font: 12pt Georgia, "Times New Roman", Times, serif;
+      line-height: 1.3;
+      /* min-height: 300vh;
+  position: relative;
+  margin: 0; */
+    }
+
+   
+
+    div.footer {
+    
+      display: block;
+      text-align: center;
+      position: running(footer);
+     
+    }
+
+  
+    @page {
+        @bottom-center {
+            content: element(footer);
+        }
+    }
+    #background{
+    padding-left: 245px;
+    position: absolute;
+    
+    /* z-index: 0; */
+    background: white;
+    backgroung-position: center;
+    display: block;
+    /* min-height: 50%; */
+    /* min-width: 50%; */
+    color: yellow;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 271px;
+    
+}
+
+#content{
+    position: absolute;
+    z-index:10;
+}
+
+#bg-text
+{
+    color:lightgrey;
+    font-size:120px;
+    transform:rotate(300deg);
+    -webkit-transform:rotate(300deg);
+    opacity:0.5;
+      z-index: 9999;
+    
+}
+
+  
+                
+  </style>
+  <body class="watermark">
+	<div id="background">
+  <p id="bg-text">e-DAR</p>
+	</div>
+  </head>
+ <table style="border-collapse: collapse; width: 100%; height: 32px; margin-left: auto; margin-right: auto;" border="0">
+<tbody>
+<tr style="height: 32px;">
+<td style="width: 100%; height: 32px; text-align: center;">
+<p><strong>FORM-XIII&nbsp;
+<img style="float: right;"  th:src="@{${'https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/'+pdf13Entry.stateCode+'_police.jpg'}}" alt="" width="91" height="84" /><img style="float: left;" src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/eDAR_logo1.png" alt="" width="91" height="84" />
+</strong></p>
+<p><strong>BEFORE THE MOTOR ACCIDENT CLAIMS TRIBUNAL</strong></p>
+<p><strong>Accident Id - <span th:text="${pdf13Entry.accidentId}"></span></strong></p>
+<p><strong>Petitioners(s) vs Respondent(s) </strong></p>
+<p><strong>FORMAT OF WRITTEN SUBMISSIONS TO BE FILED BY PARTIES IN DEATH CASES</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+<table style="border-collapse: collapse; width: 100%; margin-left: auto; margin-right: auto; height: auto;" border="0">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 4.02562%; height: 18px;">1.</td>
+<td style="height: 18px; width: 34.1713%;" colspan="2">Date of accident</td>
+<td style="height: 18px; width: 61.6347%;" colspan="3">&nbsp;<span th:text="${pdf13Entry.accidentDate}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.02562%; height: 18px;">2.</td>
+<td style="height: 18px; width: 34.1713%;" colspan="2">Name of the deceased</td>
+<td style="height: 18px; width: 61.6347%;" colspan="3">&nbsp;<span th:text="${pdf13Entry.deceasedName}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.02562%; height: 18px;">3.</td>
+<td style="height: 18px; width: 34.1713%;" colspan="2">Age of the deceased</td>
+<td style="height: 18px; width: 61.6347%;" colspan="3">&nbsp;<span th:text="${pdf13Entry.deceasedAge}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.02562%; height: 18px;">4.</td>
+<td style="height: 18px; width: 34.1713%;" colspan="2">Occupation of the deceased</td>
+<td style="height: 18px; width: 61.6347%;" colspan="3">&nbsp;<span th:text="${pdf13Entry.deceasedOccupation}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.02562%; height: 18px;">5.</td>
+<td style="width: 34.1713%; height: 18px;" colspan="2">Income of the deceased</td>
+<td style="width: 61.6347%; height: 18px;" colspan="3">&nbsp;<span th:text="${pdf13Entry.petitionersDeceasedIncome}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.02562%; height: 18px;">6.</td>
+<td style="width: 95.8059%; height: 18px;" colspan="5">Name, age and relationship of legal representatives of deceased</td>
+</tr>
+</tbody>
+</table>
+<table style="border-collapse: collapse; width: 100%; margin-left: auto; margin-right: auto; height: auto;" border="1">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 9.11477%; height: 18px; text-align: center;" colspan="2"><strong>S.No.</strong></td>
+<td style="height: 18px; text-align: center; width: 40.1148%;" colspan="2"><strong>Name</strong></td>
+<td style="width: 18.4725%; height: 18px; text-align: center;"><strong>Age</strong></td>
+<td style="width: 32.1295%; height: 18px; text-align: center;"><strong>Relation</strong></td>
+</tr>
+
+
+<tr style="height: 18px;"th:each="legalrepresentative , iStat : ${pdf13Entry.deceasedLegalRepresentatives}">
+<td style="height: 18px; text-align: center; width: 9.11477%;" colspan="2"><span th:text="${iStat.index+1}"></span></td>
+<td style="height: 18px; width: 40.1148%;" colspan="2">&nbsp;<span th:text="${legalrepresentative.name}"></span></td>
+<td style="width: 18.4725%; height: 18px;">&nbsp;<span th:text="${legalrepresentative.age}"></span></td>
+<td style="width: 32.1295%; height: 18px;">&nbsp;<span th:text="${legalrepresentative.relation}"></span></td>
+</tr>
+
+</tbody>
+</table>
+<br><br>
+<table style="border-collapse: collapse; width:100%; margin-left: auto; margin-right: auto; height: 522px;" border="1">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 4.02562%; height: 18px;">7.</td>
+<td style="width: 95.8059%; height: 18px;" colspan="5"><strong>Computation of Compensation</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 9.11477%; text-align: center;" colspan="2"><strong>S.No.</strong></td>
+<td style="width: 29.0821%; height: 18px; text-align: center;"><strong>Heads</strong></td>
+<td style="height: 18px; width: 29.5052%; text-align: center;" colspan="2"><strong>Claim of Petitioners(s)</strong></td>
+<td style="width: 32.1295%; height: 18px; text-align: center;"><strong>Response of Respondent(s)</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 9.11477%; text-align: center;" colspan="2">i.</td>
+<td style="width: 29.0821%; height: 18px;">Income of the deceased (A)</td>
+<td style="height: 18px; width: 29.5052%;" colspan="2">&nbsp;<span th:text="${pdf13Entry.petitionersDeceasedIncome}"></span></td>
+<td style="width: 32.1295%; height: 18px;">&nbsp;<span th:text="${pdf13Entry.respondentsDeceasedIncome}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; text-align: center; width: 9.11477%;" colspan="2">ii.</td>
+<td style="width: 29.0821%; height: 18px;">Add-Future Prospects (B)</td>
+<td style="height: 18px; width: 29.5052%;" colspan="2">&nbsp;<span th:text="${pdf13Entry.petitionersFutureProspects}"></span></td>
+<td style="width: 32.1295%; height: 18px;">&nbsp;<span th:text="${pdf13Entry.respondentsFutureProspects}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="text-align: center; height: 18px; width: 9.11477%;" colspan="2">iii.</td>
+<td style="width: 29.0821%; height: 18px;">Less-Personal expenses of the deceased (C)</td>
+<td style="height: 18px; width: 29.5052%;" colspan="2">&nbsp;<span th:text="${pdf13Entry.petitionersDeceasedPersonalExpenses}"></span></td>
+<td style="width: 32.1295%; height: 18px;">&nbsp;<span th:text="${pdf13Entry.respondentsDeceasedPersonalExpenses}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="text-align: center; height: 18px; width: 9.11477%;" colspan="2">iv.</td>
+<td style="width: 29.0821%; height: 18px;">Monthly loss of dependency [(A+B) &ndash; C = D]</td>
+<td style="height: 18px; width: 29.5052%;" colspan="2">&nbsp;<span th:text="${pdf13Entry.petitionersMonthlyLoss}"></span></td>
+<td style="width: 32.1295%; height: 18px;">&nbsp;<span th:text="${pdf13Entry.respondentsMonthlyLoss}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="text-align: center; height: 18px; width: 9.11477%;" colspan="2">v.</td>
+<td style="width: 29.0821%; height: 18px;">Annual loss of dependency (D x 12)</td>
+<td style="height: 18px; width: 29.5052%;" colspan="2">&nbsp;<span th:text="${pdf13Entry.petitionersAnnualLoss}"></span></td>
+<td style="width: 32.1295%; height: 18px;">&nbsp;<span th:text="${pdf13Entry.respondentsAnnualLoss}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="text-align: center; height: 18px; width: 9.11477%;" colspan="2">vi.</td>
+<td style="width: 29.0821%; height: 18px;">Multiplier (E)</td>
+<td style="height: 18px; width: 29.5052%;" colspan="2">&nbsp;<span th:text="${pdf13Entry.petitionersMultiplier}"></span></td>
+<td style="width: 32.1295%; height: 18px;">&nbsp;<span th:text="${pdf13Entry.respondentsMultiplier}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="text-align: center; height: 18px; width: 9.11477%;" colspan="2">vii.</td>
+<td style="width: 29.0821%; height: 18px;">Total loss of dependency (D x 12 x E = F)</td>
+<td style="height: 18px; width: 29.5052%;" colspan="2">&nbsp;<span th:text="${pdf13Entry.petitionersTotalLoss}"></span></td>
+<td style="width: 32.1295%; height: 18px;">&nbsp;<span th:text="${pdf13Entry.respondentsTotalLoss}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="text-align: center; height: 18px; width: 9.11477%;" colspan="2">viii.</td>
+<td style="width: 29.0821%; height: 18px;">Medical Expenses (G)</td>
+<td style="height: 18px; width: 29.5052%;" colspan="2">&nbsp;<span th:text="${pdf13Entry.petitionersMedicalExpense}"></span></td>
+<td style="width: 32.1295%; height: 18px;">&nbsp;<span th:text="${pdf13Entry.respondentsMedicalExpense}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="text-align: center; height: 18px; width: 9.11477%;" colspan="2">ix.</td>
+<td style="width: 29.0821%; height: 18px;">Compensation for loss of consortium (H)</td>
+<td style="height: 18px; width: 29.5052%;" colspan="2">&nbsp;<span th:text="${pdf13Entry.petitionersLossConsortium}"></span></td>
+<td style="width: 32.1295%; height: 18px;">&nbsp;<span th:text="${pdf13Entry.respondentsLossConsortium}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="text-align: center; height: 18px; width: 9.11477%;" colspan="2">x.</td>
+<td style="width: 29.0821%; height: 18px;">Compensation for love and affection (I)</td>
+<td style="height: 18px; width: 29.5052%;" colspan="2">&nbsp;<span th:text="${pdf13Entry.petitionersLoveAffection}"></span></td>
+<td style="width: 32.1295%; height: 18px;">&nbsp;<span th:text="${pdf13Entry.respondentsLoveAffection}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="text-align: center; height: 18px; width: 9.11477%;" colspan="2">xi.</td>
+<td style="width: 29.0821%; height: 18px;">Compensation for loss of estate (J)</td>
+<td style="height: 18px; width: 29.5052%;" colspan="2">&nbsp;<span th:text="${pdf13Entry.petitionersLossEstate}"></span></td>
+<td style="width: 32.1295%; height: 18px;">&nbsp;<span th:text="${pdf13Entry.respondentsLossEstate}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 9.11477%; text-align: center; height: 18px;" colspan="2">xii.</td>
+<td style="width: 29.0821%; height: 18px;">Compensation towards funeral expenses (K)</td>
+<td style="width: 29.5052%; height: 18px;" colspan="2">&nbsp;<span th:text="${pdf13Entry.petitionersFuneralExpenses}"></span></td>
+<td style="width: 32.1295%; height: 18px;">&nbsp;<span th:text="${pdf13Entry.respondentsFuneralExpenses}"></span></td>
+</tr>
+<tr style="height: 36px;">
+<td style="width: 38.1969%; height: 36px;" colspan="3"><strong>TOTAL COMPENSATION (F + G + H + I + J + K =L)</strong></td>
+<td style="width: 29.5052%; height: 36px;" colspan="2">&nbsp;<span th:text="${pdf13Entry.petitionersTotalCompensation}"></span></td>
+<td style="width: 32.1295%; height: 36px;">&nbsp;<span th:text="${pdf13Entry.respondentsTotalCompensation}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 38.1969%; height: 18px; text-align: center;" colspan="3"><strong>INTEREST</strong></td>
+<td style="width: 29.5052%; height: 18px;" colspan="2">&nbsp;<span th:text="${pdf13Entry.petitionersTotalInterest}"></span></td>
+<td style="width: 32.1295%; height: 18px;">&nbsp;<span th:text="${pdf13Entry.respondentsTotalInterest}"></span></td>
+</tr>
+</tbody>
+<div class="footer">
+e-DAR  Detailed Accident Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Date of Generation&nbsp;<span th:text="${pdf13Entry.currentDate}"></span>
+  </div>
+</table>
+</html>

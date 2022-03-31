@@ -1,0 +1,503 @@
+<html>
+<head>
+<style type="text/css">
+    body {
+      font: 12pt Georgia, "Times New Roman", Times, serif;
+      line-height: 1.3;
+      /* min-height: 300vh;
+  position: relative;
+  margin: 0; */
+    }
+
+   
+
+    div.footer {
+    
+      display: block;
+      text-align: center;
+      position: running(footer);
+     
+    }
+
+  
+    @page {
+        @bottom-center {
+            content: element(footer);
+        }
+    }
+    #background{
+    padding-left: 245px;
+    position: absolute;
+    
+    /* z-index: 0; */
+    background: white;
+    backgroung-position: center;
+    display: block;
+    /* min-height: 50%; */
+    /* min-width: 50%; */
+    color: yellow;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 271px;
+    
+}
+
+#content{
+    position: absolute;
+    z-index:10;
+}
+
+#bg-text
+{
+    color:lightgrey;
+    font-size:120px;
+    transform:rotate(300deg);
+    -webkit-transform:rotate(300deg);
+    opacity:0.5;
+      z-index: 9999;
+    
+}
+
+  
+                
+  </style>
+  <body class="watermark">
+	<div id="background">
+  <p id="bg-text">e-DAR</p>
+	</div>
+  </head>
+  <table style="border-collapse: collapse; width: 100%; height: 32px; margin-left: auto; margin-right: auto;" border="0">
+<tbody>
+<tr style="height: 32px;">
+<td style="width: 100%; height: 32px; text-align: center;">
+<p><strong>FORM-XI&nbsp;
+<img style="float: right;"  th:src="@{${'https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/'+pdf11Entry.stateCode+'_police.jpg'}}" alt="" width="91" height="84" /><img style="float: left;" src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/eDAR_logo1.png" alt="" width="91" height="84" />
+</strong></p>
+<p><strong>Accident Id - <span th:text="${pdf11Entry.accidentId}"></span></strong></p>
+<p><strong>INSURANCE FORM</strong></p>
+<p>By Designated Officer of Insurance Company to Claims Tribunal Within 30 days of receipt of DAR</p>
+</td>
+</tr>
+</tbody>
+</table>
+ 
+<table style="border-collapse: collapse; width: 100%; height: 78px; margin-left: auto; margin-right: auto;" border="1">
+<tbody>
+<tr style="height: 27px;">
+<td style="width: 23.2026%; height: 27px;">FIR No.</td>
+<td style="width: 76.7974%; height: 27px; text-transform: capitalize;">&nbsp;<span th:text="${pdf11Entry.firNumber}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 23.2026%; height: 17px;">Date</td>
+<td style="width: 76.7974%; height: 17px; text-transform: capitalize;">&nbsp;<span th:text="${pdf11Entry.firDateTime}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 23.2026%; height: 17px;">Under Section</td>
+<td style="width: 76.7974%; height: 17px; text-transform: capitalize;">&nbsp; <span th:text="${pdf11Entry.act}"></span><br>&nbsp;<span th:text="${pdf11Entry.section}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 23.2026%; height: 17px;">Police Station</td>
+<td style="width: 76.7974%; height: 17px; text-transform: capitalize;">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf11Entry.psName}"></span>,<span style="text-transform: lowercase;" th:text="${pdf11Entry.district}"></span>,<span style="text-transform: lowercase;" th:text="${pdf11Entry.state}"></span></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table style="border-collapse: collapse; width: 100%; margin-left: auto; margin-right: auto; height: 1523px;" border="1">
+<tbody>
+<tr style="height: 17px;">
+<td style="width: 3.75392%; height: 68px;" rowspan="4">1.</td>
+<td style="height: 17px; width: 167.594%;" colspan="3"><strong>Vehicle Details</strong></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 43.5408%; height: 17px;">Registration Number</td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.vehRegNo}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 43.5408%; height: 17px;">Vehicle Make</td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf11Entry.vehModel}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 43.5408%; height: 17px;">Vehicle Model</td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf11Entry.vehMake}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 3.75392%; height: 51px;" rowspan="3">2.</td>
+<td style="width: 43.5408%; height: 17px;"><strong>Details of Insured</strong></td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;</td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 43.5408%; height: 17px;">Name</td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf11Entry.insuredName}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 43.5408%; height: 17px;">Address</td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf11Entry.insuredAddress}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 3.75392%; height: 69px;" rowspan="4">3.</td>
+<td style="width: 43.5408%; height: 17px;"><strong>Policy Details</strong></td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;</td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 43.5408%; height: 18px;">Policy No.</td>
+<td style="width: 124.053%; height: 18px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.policyNumber}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 43.5408%; height: 17px;">Period of Policy</td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;Till&nbsp;<span th:text="${pdf11Entry.periodOfPolicy}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 43.5408%; height: 17px;">Nature/Type of Policy</td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf11Entry.typeOfPolicy}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 3.75392%; height: 17px;">4.</td>
+<td style="width: 43.5408%; height: 17px;">Date of Accident</td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.accidentDate}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 3.75392%; height: 17px;">5.</td>
+<td style="width: 43.5408%; height: 17px;">Date of intimation of the accident by the Insured to the Insurance Company</td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp; &nbsp;<span th:text="${pdf11Entry.dateOfIntimation}"></span></td>
+</tr>
+<tr style="height: 19px;">
+<td style="width: 3.75392%; height: 19px;">6.</td>
+<td style="width: 43.5408%; height: 19px;">Date of receipt of FAR</td>
+<td style="width: 124.053%; height: 19px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.dateOfreceiptFAR}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 3.75392%; height: 17px;">7.</td>
+<td style="width: 43.5408%; height: 17px;">Date of receipt of IAR</td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.dateOfreceiptIAR}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 3.75392%; height: 17px;">8.</td>
+<td style="width: 43.5408%; height: 17px;">Date of receipt of DAR</td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.dateOfreceiptDAR}"></span></td>
+</tr>
+<tr style="height: 35px;">
+<td style="width: 3.75392%; height: 35px;">9.</td>
+<td style="width: 43.5408%; height: 35px;">Date of appointment of the Designated Officer by the Insurance Company</td>
+<td style="width: 124.053%; height: 35px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.dateOfAppnmntDsgndOfficer}"></span></td>
+</tr>
+<tr style="height: 26px;">
+<td style="width: 3.75392%; height: 60px;" rowspan="3">10.</td>
+<td style="height: 26px; width: 167.594%;" colspan="3"><strong>Details of Designated Officer</strong></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 43.5408%; height: 17px;">Name</td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.desgnOfficerName}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 43.5408%; height: 17px;">Address</td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.desgnOfficerAddress}"></span></td>
+</tr>
+<tr style="height: 21px;">
+<td style="width: 3.75392%; height: 21px;">11.</td>
+<td style="width: 43.5408%; height: 21px;">Date of appointment of the Surveyor/Investigator</td>
+<td style="width: 124.053%; height: 21px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.dateOfAppnmntOfInvestigator}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 3.75392%; height: 51px;" rowspan="3">12.</td>
+<td style="height: 17px; width: 167.594%;" colspan="3">Name and Address of Surveyor/ Investigator</td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 43.5408%; height: 17px;">Name</td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf11Entry.investigatorName}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 43.5408%; height: 17px;">Address</td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf11Entry.investigatorAddress}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 3.75392%; height: 17px;">13.</td>
+<td style="width: 43.5408%; height: 17px;">Date of Report of the Surveyor/Investigator</td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.dateOfReportOfInvestigator}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 3.75392%; height: 17px;">14.</td>
+<td style="width: 43.5408%; height: 17px;">Date of Decision of the Designated Officer</td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.dateOfDecision}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 3.75392%; height: 17px;">15.</td>
+<td style="width: 43.5408%; height: 17px;">Whether this Form has been filed within 30 days of receipt of DAR If not, give reasons for delay</td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.formFilledWithin30Days}"></span></td>
+</tr>
+
+<span th:if="${pdf11Entry.injurySeverity == '1'}" >
+<tr style="height: 17px;">
+<td style="width: 171.348%; text-align: center; height: 17px;" colspan="4"><strong>DEATH CASE</strong></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 3.75392%; height: 17px;">16.</td>
+<td style="width: 43.5408%; height: 17px;">Name of the deceased</td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf11Entry.DeceasedName}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 3.75392%; height: 17px;">17.</td>
+<td style="width: 43.5408%; height: 17px;">Age of the deceased</td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf11Entry.DeceasedAge}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 3.75392%; height: 17px;">18.</td>
+<td style="width: 43.5408%; height: 17px;">Occupation</td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf11Entry.DeceasedOccupation}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 3.75392%; height: 17px;">19.</td>
+<td style="width: 43.5408%; height: 17px;">Monthly Income</td>
+<td style="width: 124.053%; height: 17px; text-transform: capitalize;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.DeceasedMonthlyIncome}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 3.75392%; height: 34px;" rowspan="2">20.</td>
+<td style="height: 17px; width: 167.594%;" colspan="3"><strong>Details of Legal Representatives of the deceased</strong></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 43.5408%; height: 17px; text-align: center;"><strong>Name</strong></td>
+<td style="width: 27.8069%; height: 17px; text-align: center;"><strong>Age</strong></td>
+<td style="width: 96.246%; text-align: center; height: 17px;"><strong>Relationship</strong></td>
+</tr>
+<tr style="height: 17px;"th:each="legalrepresentative , iStat : ${pdf11Entry.deceasedLegalRepresentatives}">
+<td style="width: 3.75392%; height: 17px; text-align: center;"><span th:text="${iStat.index+1}"></span></td>
+<td style="width: 43.5408%; height: 17px; text-transform: capitalize;">&nbsp;<span th:text="${legalrepresentative.name}"></span></td>
+<td style="width: 27.8069%; height: 17px; text-transform: capitalize;">&nbsp;<span th:text="${legalrepresentative.age}"></span></td>
+<td style="width: 96.246%; height: 17px; text-transform: capitalize;">&nbsp;<span th:text="${legalrepresentative.relation}"></span></td>
+</tr>
+<!-- <tr style="height: 17px;">
+<td style="width: 3.75392%; height: 18px; text-align: center;">(ii)</td>
+<td style="width: 43.5408%; height: 18px;">&nbsp;&nbsp;</td>
+<td style="width: 27.8069%; height: 18px;">&nbsp;&nbsp;</td>
+<td style="width: 96.246%; height: 18px;">&nbsp;&nbsp;</td>
+</tr> -->
+<!-- <tr style="height: 17px;">
+<td style="width: 3.75392%; height: 17px; text-align: center;">(iii)</td>
+<td style="width: 43.5408%; height: 17px;">&nbsp;&nbsp;</td>
+<td style="width: 27.8069%; height: 17px;">&nbsp;&nbsp;</td>
+<td style="width: 96.246%; height: 17px;">&nbsp;&nbsp;</td>
+</tr> -->
+<!-- <tr style="height: 17px;">
+<td style="width: 3.75392%; height: 17px; text-align: center;">(iv)</td>
+<td style="width: 43.5408%; height: 17px;">&nbsp;&nbsp;</td>
+<td style="width: 27.8069%; height: 17px;">&nbsp;&nbsp;</td>
+<td style="width: 96.246%; height: 17px;">&nbsp;&nbsp;</td>
+</tr> -->
+<!-- <tr style="height: 17px;">
+<td style="width: 3.75392%; height: 17px; text-align: center;">(v)</td>
+<td style="width: 43.5408%; height: 17px;">&nbsp;&nbsp;</td>
+<td style="width: 27.8069%; height: 17px;">&nbsp;&nbsp;</td>
+<td style="width: 96.246%; height: 17px;">&nbsp;&nbsp;</td>
+</tr> -->
+<!-- <tr style="height: 17px;">
+<td style="width: 3.75392%; height: 17px; text-align: center;">(vi)</td>
+<td style="width: 43.5408%; height: 17px;">&nbsp;&nbsp;</td>
+<td style="width: 27.8069%; height: 17px;">&nbsp;&nbsp;</td>
+<td style="width: 96.246%; height: 17px;">&nbsp;&nbsp;</td>
+</tr> -->
+<tr style="height: 17px;">
+<td style="width: 3.75392%; height: 17px;">21.</td>
+<td style="width: 43.5408%; height: 17px;"><strong>Computation of compensation</strong></td>
+<td style="width: 27.8069%; height: 17px; text-transform: capitalize;" colspan="2">Amount in Rs.</td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 3.75392%; height: 233px;" rowspan="13">&nbsp;</td>
+<td style="width: 43.5408%; height: 17px;">Income of the deceased (A)</td>
+<td style="height: 17px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.DeceasedIncome}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Add-Future Prospects (B)</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.addFutureProspects}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Less-Personal expenses of the deceased (C)</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;<span th:text="${pdf11Entry.lessPersonalExpenses}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Monthly loss of dependency [(A+B) &ndash; C = D]</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.monthlyLossDependency}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Annual loss of dependency (D x 12)</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.annualLossDependency}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Multiplier (E)</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.multiplier}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Total loss of dependency (E x 12 x D = F)</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.totalLossOfDependency}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Medical Expenses (G)</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.medicalExpenses}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Compensation for loss of consortium (H)</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.compLossOfConsortium}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Compensation of loss for love and affection (I)</td>
+<td style="height: 18px; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.compLossOfLoveAndAffection}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Compensation for loss of estate (J)</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.compForLossOfEstate}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Compensation towards funeral expenses (K)</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.compFuneralExpenses}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;"><strong>Total Compensation (F+ G + H + I+J+K = L)</strong></td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.deceasedTotalCompensation}"></span></td>
+</tr>
+</span>
+<span th:unless="${pdf11Entry.injurySeverity == '1'}" >
+<tr style="height: 18px;">
+<td style="width: 171.348%; text-align: center; height: 18px;" colspan="4"><strong>INJURY CASE</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.75392%; height: 18px;">22.</td>
+<td style="width: 43.5408%; height: 18px;">Name of the victim</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf11Entry.victimName}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.75392%; height: 18px;">23.</td>
+<td style="width: 43.5408%; height: 18px;">Age of the victim</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.victimAge}"></span></td>
+</tr>
+<tr style="height: 14px;">
+<td style="width: 3.75392%; height: 14px;">24.</td>
+<td style="width: 43.5408%; height: 14px;">Occupation</td>
+<td style="height: 14px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf11Entry.victimOccupation}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.75392%; height: 18px;">25.</td>
+<td style="width: 43.5408%; height: 18px;">Monthly Income</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.victimMonthlyIncome}"></span></td>
+</tr>
+  <tr style="height: 18px;">
+<td style="width: 3.75392%; height: 18px;">26.</td>
+<td style="width: 43.5408%; height: 18px;">Nature of Injury</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf11Entry.victimNatureOfInjury}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.75392%; height: 18px;">27.</td>
+<td style="width: 43.5408%; height: 18px;">Type of Injury</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf11Entry.typeOfInjury}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.75392%; height: 18px;">28.</td>
+<td style="width: 43.5408%; height: 18px;">Details of medical treatment</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf11Entry.medicalTreatmentDetails}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.75392%; height: 18px;">29.</td>
+<td style="width: 43.5408%; height: 18px;">Details of permanent disability (if any)</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf11Entry.permanentDisabilityDetails}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.75392%; height: 288px;" rowspan="16">30.</td>
+<td style="width: 43.5408%; height: 18px;"><strong>Computation of compensation</strong></td>
+<td style="height: 18px; text-align: center; width: 124.053%;" colspan="2"><strong>Amount in Rs.</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Expenditure on treatment</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.expenOnTreatment}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Expenditure on conveyance</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.expenOnConveyance}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Expenditure on special diet</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.expenOnSpecialDiet}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Cost of nursing/attendant</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.costOfNursing}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Cost of artificial limb</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.costOfArtificialLimb}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Loss of earning capacity</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.lossOfEarningCapcity}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Loss of income</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.lossOfIncome}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Any other loss which may require any special treatment or aid to the injured for the rest of his life</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.anyOtherLoss}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Compensation for mental and physical shock</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.compForMental}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Pain and suffering</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.painAndSuffering}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Loss of amenities of life</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.lossOfAmenities}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Disfiguration</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.Disfiguration}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Loss of marriage prospects</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.lossOfMarriage}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;">Loss of earning, inconvenience, hardships, disappointment, frustration, mental stress, dejectment and unhappiness in future life etc.</td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.lossOfEarningHardships}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 43.5408%; height: 18px;"><strong>Total compensation</strong></td>
+<td style="height: 18px; text-transform: capitalize; width: 124.053%;" colspan="2">&nbsp;&nbsp;<span th:text="${pdf11Entry.injuredTotalCompensation}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.75392%; height: 18px;">31.</td>
+<td style="width: 167.594%; height: 18px;" colspan="3">If the Insurance Company does not admit the liability to pay the compensation, disclose the grounds on which the Insurance Company wants to contest the claim:
+<span th:text="${pdf11Entry.insCompLiabilityToPay}"></span></td>
+
+</tr>
+</tbody>
+
+<div class="footer">
+e-DAR  Detailed Accident Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Date of Generation&nbsp;<span th:text="${pdf11Entry.currentDate}"></span>
+  </div>
+</table>
+<br>
+<br>
+<br>
+<br>
+
+<table style="border-collapse: collapse; width: 100%;" border="0">
+<tbody>
+<tr>
+<td style="width: 10%;" colspan="10">
+<p><strong>Verification:</strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 10%;" colspan="10">Verified at____________ on this _____________ day of ____________ that the contents of the above report are true and correct. I am well conversant with the principles of computation of compensation and have applied the same to compute the compensation.</td>
+</tr>
+<tr>
+<td style="width: 10%; text-align:right" colspan="10"><strong>DESIGNATED OFFICER</strong></td>
+</tr>
+<tr>
+<td style="width: 10%;" colspan="10">1.&nbsp; Report of the Surveyor/Investigator</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+</html>

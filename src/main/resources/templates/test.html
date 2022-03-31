@@ -1,0 +1,685 @@
+ <html>
+<head>
+<style type="text/css">
+    body {
+      font: 12pt Georgia, "Times New Roman", Times, serif;
+      line-height: 1.3;
+      /* min-height: 300vh;
+  position: relative;
+  margin: 0; */
+    }
+
+   
+
+    div.footer {
+    
+      display: block;
+      text-align: center;
+      position: running(footer);
+     
+    }
+
+  
+    @page {
+        @bottom-center {
+            content: element(footer);
+        }
+    }
+    #background{
+    padding-left: 245px;
+    position: absolute;
+    
+    /* z-index: 0; */
+    background: white;
+    backgroung-position: center;
+    display: block;
+    /* min-height: 50%; */
+    /* min-width: 50%; */
+    color: yellow;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 271px;
+    
+}
+
+#content{
+    position: absolute;
+    z-index:10;
+}
+
+#bg-text
+{
+    color:lightgrey;
+    font-size:120px;
+    transform:rotate(300deg);
+    -webkit-transform:rotate(300deg);
+    opacity:0.5;
+      z-index: 9999;
+    
+}
+
+  
+                
+  </style>
+  <body class="watermark">
+	<div id="background">
+  <p id="bg-text">e-DAR</p>
+	</div>
+  </head>
+<body>
+<table style="border-collapse: collapse; width: 98%; height: 32px; margin-left: auto; margin-right: auto;" border="0">
+<tbody>
+<tr style="height: 32px;">
+<td style="width: 100%; height: 32px; text-align: center;">
+<p><strong>FORM-VI
+<img style="float: right;" src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/29_police.jpg" alt="" width="91" height="84" /><img style="float: left;" src="https://gisnic.tn.nic.in/irad_new/api/api_demo94/reports/images/eDAR_logo1.png" alt="" width="91" height="84" />
+</strong></p>
+<p><strong>VICTIM&lsquo;S FORM</strong></p>
+<p><strong>Accident Id - <span th:text="${pdf6Entry.accidentId}"></span></strong></p>
+<p>By Victim(s) to Investigating Officer within 60 days of Accident Copy to Insurance Company and SLSA</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table style="border-collapse: collapse; width: 98%; height: 78px; margin-left: auto; margin-right: auto;" border="1">
+<tbody>
+<tr style="height: 27px;">
+<td style="width: 23.2026%; height: 27px;">FIR No.</td>
+<td style="width: 76.7974%; height: 27px;text-transform: uppercase ;">&nbsp;&nbsp;<span th:text="${pdf6Entry.firNumber}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 23.2026%; height: 17px;">Date</td>
+<td style="width: 76.7974%; height: 17px;text-transform: uppercase ;">&nbsp;<span th:text="${pdf6Entry.firDateTime}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 23.2026%; height: 17px;">Under Section</td>
+<td style="width: 76.7974%; height: 17px;text-transform: uppercase ;">&nbsp;&nbsp;<span th:text="${pdf6Entry.act}"></span>&nbsp; / &nbsp;<span th:text="${pdf6Entry.section}"></span></td>
+</tr>
+<tr style="height: 17px;">
+<td style="width: 23.2026%; height: 17px;">Police Station</td>
+<td style="width: 76.7974%; height: 17px;text-transform: uppercase ;">&nbsp;&nbsp;<span th:text="${pdf6Entry.psName}"></span>,<span th:text="${pdf6Entry.district}"></span>,<span th:text="${pdf6Entry.state}"></span></td>
+</tr>
+</tbody>
+<div class="footer">
+e-DAR  Detailed Accident Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Dated of Generation&nbsp;<span th:text="${pdf6Entry.currentDate}"></span>
+  </div>
+</table>
+<p>&nbsp;</p>
+<table style="border-collapse: collapse; width: 98%; height: auto; margin-left: auto; margin-right: auto;" border="1">
+<tbody>
+<tr style="height: 17px;">
+<td style="width: 3.3368%; height: 17px;">1</td>
+<td style="height: 17px; width: 20.7524%;">Date&nbsp; of Accident</td>
+<td style="width: 75.2156%; height: 17px; text-transform: capitalize;" colspan="5">&nbsp;&nbsp;<span th:text="${pdf6Entry.dateTime}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">2</td>
+<td style="width: 20.7524%; height: 18px;">Time of Accident&nbsp;</td>
+<td style="width: 75.2156%; height: 18px; text-transform: capitalize;" colspan="5">&nbsp;&nbsp;<span th:text="${pdf6Entry.timeOfTheDay}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">3</td>
+<td style="width: 20.7524%; height: 18px;">Place of Accident&nbsp;</td>
+<td style="width: 75.2156%; height: 18px; text-transform: capitalize;" colspan="5">&nbsp;&nbsp;<span th:text="${pdf6Entry.landmarks}"></span>&nbsp; / &nbsp;<span th:text="${pdf6Entry.roadDetails}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">4</td>
+<td style="width: 20.7524%; height: 18px;">Nature of case</td>
+<td style="width: 75.2156%; height: 18px; text-transform: capitalize;" colspan="5">&nbsp;&nbsp;<span th:text="${pdf6Entry.NatureOfAccident}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">5</td>
+<td style="width: 20.7524%; height: 18px;">Registration Number of the offending vehicle</td>
+<td style="width: 75.2156%; height: 18px; text-transform: uppercase;" colspan="5">&nbsp;&nbsp;<strong><span th:text="${pdf6Entry.vehicle_reg_no}"></span></strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">6</td>
+<td style="width: 20.7524%; height: 18px;"><strong>Owner Details</strong></td>
+<td style="width: 75.2156%; height: 18px; text-transform: capitalize;" colspan="5"></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">&nbsp;</td>
+<td style="width: 20.7524%; height: 18px;">Name</td>
+<td style="width: 75.2156%; height: 18px; text-transform: capitalize;" colspan="5">&nbsp;&nbsp;<strong><span th:text="${pdf6Entry.vehOwner}"></span></strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">&nbsp;</td>
+<td style="width: 20.7524%; height: 18px;">Address</td>
+<td style="width: 75.2156%; height: 18px; text-transform: capitalize;" colspan="5">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf6Entry.ownerAddr}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">7</td>
+<td style="width: 20.7524%; height: 18px;"><strong>Driver Details</strong></td>
+<td style="width: 75.2156%; height: 18px; text-transform: capitalize;" colspan="5"></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">&nbsp;</td>
+<td style="width: 20.7524%; height: 18px;">Name</td>
+<td style="width: 75.2156%; height: 18px; text-transform: capitalize;" colspan="5">&nbsp;&nbsp;<strong><span th:text="${pdf6Entry.ser_name}"></span></strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">&nbsp;</td>
+<td style="width: 20.7524%; height: 18px;">Address</td>
+<td style="width: 75.2156%; height: 18px; text-transform: capitalize;" colspan="5">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf6Entry.ser_permadd1}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">8</td>
+<td style="width: 20.7524%; height: 18px;"><strong>Insurance Details</strong></td>
+<td style="width: 75.2156%; height: 18px; text-transform: capitalize;" colspan="5"></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">&nbsp;</td>
+<td style="width: 20.7524%; height: 18px;">Policy No.</td>
+<td style="width: 75.2156%; height: 18px; text-transform: capitalize;" colspan="5">&nbsp;&nbsp;<span th:text="${pdf6Entry.insurancePolicyno}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">&nbsp;</td>
+<td style="width: 20.7524%; height: 18px;">Period of Policy</td>
+<td style="width: 75.2156%; height: 18px; text-transform: capitalize;" colspan="5">&nbsp;&nbsp;Till&nbsp;<span th:text="${pdf6Entry.insuranceValidity}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">&nbsp;</td>
+<td style="width: 20.7524%; height: 18px;">Name of Insurance Company</td>
+<td style="height: 18px; width: 75.2156%; text-transform: capitalize;" colspan="5">&nbsp;&nbsp;<span th:text="${pdf6Entry.insuranceDetails}"></span></td>
+</tr>
+<span th:if="${pdf6Entry.injurySeverity == '1'}" >
+
+<tr style="height: 18px;">
+<td style="width: 99.3048%; text-align: center; height: 18px;" colspan="7"><strong>DEATH CASE</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">9</td>
+<td style="width: 35.5128%; height: 18px;" colspan="2">Name of the deceased</td>
+<td style="width: 60.4552%; height: 18px; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<strong><span th:text="${pdf6Entry.deceasedName}"></span></strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">10</td>
+<td style="width: 35.5128%; height: 18px;" colspan="2">Father's Name</td>
+<td style="width: 60.4552%; height: 18px; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf6Entry.fatherNameOfDeceased}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">11</td>
+<td style="width: 35.5128%; height: 18px;" colspan="2">Age / Date of Birth</td>
+<td style="width: 60.4552%; height: 18px; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span th:text="${pdf6Entry.ageOfDeceased}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">12</td>
+<td style="width: 35.5128%; height: 18px;" colspan="2">Date of death</td>
+<td style="width: 60.4552%; height: 18px; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span th:text="${pdf6Entry.deceasedDeathDate}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">13</td>
+<td style="width: 35.5128%; height: 18px;" colspan="2">Gender of deceased</td>
+<td style="width: 60.4552%; height: 18px; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span th:text="${pdf6Entry.genderOfDeceased}"></span></td>
+</tr>
+<tr style="height: 36px;">
+<td style="width: 3.3368%; height: 36px;">14</td>
+<td style="width: 35.5128%; height: 36px;" colspan="2">Marital status of the deceased</td>
+<td style="width: 60.4552%; height: 36px; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span th:text="${pdf6Entry.maritalstatusOfDeceased}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">15</td>
+<td style="width: 35.5128%; height: 18px;" colspan="2">Occupation   of the deceased</td>
+<td style="width: 60.4552%; height: 18px; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span th:text="${pdf6Entry.occupationOfDeceased}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">16</td>
+<td style="width: 35.5128%; height: 18px;" colspan="2">If the deceased was employed, give the name and address of the employer</td>
+<td style="width: 60.4552%; height: 18px;" colspan="4">&nbsp;&nbsp;<span th:text="${pdf6Entry.nameAndAddressOfDeceased}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">17</td>
+<td style="width: 35.5128%; height: 18px;" colspan="2">Income of the deceased</td>
+<td style="width: 60.4552%; height: 18px;" colspan="4">&nbsp;&nbsp;<span th:text="${pdf6Entry.incomeOfDeceased}"></span></td>
+</tr>
+<tr style="height: 10px;">
+<td style="width: 3.3368%; height: 10px;">18</td>
+<td style="width: 35.5128%; height: 10px;" colspan="2">
+<p>Whether the deceased was assessed to Income Tax</p>
+<p>If yes, file the copy of Income Tax Return for the last three years</p>
+</td>
+<td style="width: 60.4552%; height: 10px;" colspan="4">&nbsp;&nbsp;<span th:text="${pdf6Entry.assesedToIncomeTaxDeceased}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">19</td>
+<td style="width: 35.5128%; height: 18px;" colspan="2">Whether the deceased was the sole earning member of the&nbsp; family</td>
+<td style="width: 60.4552%; height: 18px; text-transform: capitalize;" colspan="4"><span th:text="${pdf6Entry.soleEarningMember}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">20</td>
+<td style="width: 35.5128%; height: 18px;" colspan="2">Details of medical treatment given to the deceased, prior to death. Give details of medical expenses incurred</td>
+<td style="width: 60.4552%; height: 18px; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span th:text="${pdf6Entry.medicalExpenses}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">21</td>
+<td style="width: 35.5128%; height: 18px;" colspan="2">
+<p>Whether the victim got&nbsp; reimbursement of medical expenses from his employer or under a Mediclaim policy&nbsp; or under any government cashless treatment scheme or government insurance scheme&nbsp;</p>
+<p>If yes, provide details</p>
+</td>
+<td style="width: 60.4552%; height: 18px; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span th:text="${pdf6Entry.reimbursement}"></span></td>
+</tr>
+<tr style="height: 25px;">
+<td style="width: 3.3368%; height: 47px;" rowspan="2">22</td>
+<td style="width: 95.968%; height: 25px;" colspan="6"><strong>Name, Age, Gender, Relation and Marital Status of Legal Representatives of the deceased</strong></td>
+</tr>
+<tr style="height: 22px;">
+<td style="width: 20.7524%; height: 22px; text-align: center;">Name</td>
+<td style="width: 14.7604%; height: 22px; text-align: center;">Age/DOB</td>
+<td style="height: 22px; text-align: center; width: 21.3016%;" colspan="2">Gender</td>
+<td style="width: 19.6365%; height: 22px; text-align: center;">Relation</td>
+<td style="width: 19.5171%; height: 22px; text-align: center;">Marital Status</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; text-align: center; height: 18px;">i.</td>
+<td style="width: 20.7524%; height: 18px;"><span th:text="${pdf6Entry.deceasedLegalRepName}"></span></td>
+<td style="width: 14.7604%; height: 18px;"><span th:text="${pdf6Entry.deceasedLegalRepAge}"></span></td>
+<td style="width: 21.3016%; height: 18px;" colspan="2"><span th:text="${pdf6Entry.deceasedLegalRepGender}"></span></td>
+<td style="width: 19.6365%; height: 18px;"><span th:text="${pdf6Entry.deceasedLegalRepRelation}"></span></td>
+<td style="width: 19.5171%; height: 18px;"><span th:text="${pdf6Entry.deceasedLegalRepMaritalStatus}"></span></td>
+</tr>
+
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 36px;" rowspan="2">23</td>
+<td style="width: 95.968%; height: 18px;" colspan="6"><strong>Name, Contact Number and Address of Legal Representatives of the deceased&nbsp;&nbsp;</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 20.7524%; height: 18px; text-align: center;">Name</td>
+<td style="height: 18px; text-align: center; width: 23.917%;" colspan="2">Contact Number</td>
+<td style="height: 18px; text-align: center; width: 51.2986%;" colspan="3">Present Address as well as Permanent Address</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px; text-align: center;">i.</td>
+<td style="width: 20.7524%; height: 18px; text-transform: capitalize; text-align: center;"><span th:text="${pdf6Entry.deceasedLegalRepName}"></span></td>
+<td style="height: 18px; width: 23.917%; text-transform: capitalize; text-align: center;" colspan="2"><span th:text="${pdf6Entry.deceasedLegalRepContactNumber}"></span></td>
+<td style="height: 18px; width: 51.2986%; text-transform: capitalize; text-align: center;" colspan="3"><span th:text="${pdf6Entry.deceasedLegalRepAddress}"></span></td>
+</tr>
+
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 36px;" rowspan="2">24</td>
+<td style="width: 95.968%; height: 18px;" colspan="6"><strong>In case of children below the age of 18 years</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 20.7524%; height: 18px; text-align: center;">Name of Child</td>
+<td style="height: 18px; text-align: center; width: 36.062%;" colspan="3">Details of school and class of the child</td>
+<td style="width: 19.6365%; height: 18px; text-align: center;">Annual School fee</td>
+<td style="width: 19.5171%; height: 18px; text-align: center;">Approximate expenditure of the child</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; text-align: center; height: 18px;">i.</td>
+<td style="width: 20.7524%; text-align: center; height: 18px; text-transform: capitalize;"><span style="text-transform: lowercase;" th:text="${pdf6Entry.nameOfChild}"></span></td>
+<td style="text-align: center; height: 18px; width: 36.062%; text-transform: capitalize;" colspan="3"><span style="text-transform: lowercase;" th:text="${pdf6Entry.DetailsOfSchool}"></span></td>
+<td style="width: 19.6365%; text-align: center; height: 18px; text-transform: capitalize;"><span th:text="${pdf6Entry.annualSchoolFee}"></span></td>
+<td style="width: 19.5171%; text-align: center; height: 18px; text-transform: capitalize;"><!-- <span th:text="${pdf6Entry.approxExpenditure}"></span> --></td>
+</tr>
+
+</span>
+<span th:unless="${pdf6Entry.injurySeverity == '1'}" >
+
+<tr style="height: 18px;">
+<td style="width: 99.3048%; height: 18px; text-align: center;" colspan="7"><strong>INJURY CASE</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">25</td>
+<td style="height: 18px; width: 35.5128%;" colspan="2">Name of the Injured</td>
+<td style="height: 18px; width: 60.4552%; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<strong><span th:text="${pdf6Entry.nameOfInjured}"></span></strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">26</td>
+<td style="height: 18px; width: 35.5128%;" colspan="2">Father's Name</td>
+<td style="height: 18px; width: 60.4552%; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf6Entry.injFatherName}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">27</td>
+<td style="height: 18px; width: 35.5128%;" colspan="2">Address of the Injured</td>
+<td style="height: 18px; width: 60.4552%; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf6Entry.injAddress}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">28</td>
+<td style="height: 18px; width: 35.5128%;" colspan="2">Contact No. of Injured</td>
+<td style="height: 18px; width: 60.4552%; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span th:text="${pdf6Entry.injContactNumber}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">29</td>
+<td style="height: 18px; width: 35.5128%;" colspan="2">Age / Date of Birth</td>
+<td style="height: 18px; width: 60.4552%; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span th:text="${pdf6Entry.injAge}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">30</td>
+<td style="height: 18px; width: 35.5128%;" colspan="2">Gender of the Injured</td>
+<td style="height: 18px; width: 60.4552%; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf6Entry.injGender}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">31</td>
+<td style="height: 18px; width: 35.5128%;" colspan="2">Marital status of the Injured</td>
+<td style="height: 18px; width: 60.4552%; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf6Entry.injMaritalStatus}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">32</td>
+<td style="height: 18px; width: 35.5128%;" colspan="2">Occupation of the Injured</td>
+<td style="height: 18px; width: 60.4552%; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf6Entry.injOccupation}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">33</td>
+<td style="height: 18px; width: 35.5128%;" colspan="2">If the Injured was employed, give the name and address of the employer</td>
+<td style="height: 18px; width: 60.4552%; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf6Entry.injEmployed}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 24px;">34</td>
+<td style="height: 24px; width: 35.5128%;" colspan="2">Income of the Injured</td>
+<td style="height: 24px; width: 60.4552%; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;40000<!-- <span th:text="${pdf6Entry.injIncome}"></span> --></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">35</td>
+<td style="height: 18px; width: 35.5128%;" colspan="2">
+<p>Whether Injured assessed to Income Tax</p>
+<p>If yes, file the copy of Income Tax Returns for the last three years</p>
+</td>
+<td style="height: 18px; width: 60.4552%; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span th:text="${pdf6Entry.injIncomeTax}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 29px;">36</td>
+<td style="height: 29px; width: 35.5128%;" colspan="2">Nature and description of Injury</td>
+<td style="height: 29px; width: 60.4552%; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;nature and description<!-- <span style="text-transform: lowercase;" th:text="${pdf6Entry.injNatureDescription}"></span> --></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">37</td>
+<td style="height: 18px; width: 35.5128%;" colspan="2">Medical treatment taken by the Injured</td>
+<td style="height: 18px; width: 60.4552%; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;Medical treatment<!-- <span style="text-transform: lowercase;" th:text="${pdf6Entry.injmedicalTrtmnt}"></span> --></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">38</td>
+<td style="height: 18px; width: 35.5128%;" colspan="2">
+<p>Name of hospital and period of hospitalization</p>
+<p>Hospital Name&nbsp; Period of Hospitalization Doctor&lsquo;s Name</p>
+</td>
+<td style="height: 18px; width: 60.4552%; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<!-- <span th:text="${pdf6Entry.hpname}"> --><br>Global Hospital<!-- <span th:text="${pdf6Entry.hospitalizationPeriod}"></span> --><br>francis<!-- <span th:text="${pdf6Entry.doctorName}"></span> --></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">39</td>
+<td style="height: 18px; width: 35.5128%;" colspan="2">Details of surgery(s), if undergone</td>
+<td style="height: 18px; width: 60.4552%; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;Details of surgery <span style="text-transform: lowercase;" th:text="${pdf6Entry.injdetailsOfSurgery}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">40</td>
+<td style="height: 18px; width: 35.5128%;" colspan="2">
+<p>Whether any permanent disability</p>
+<p>If yes,give details</p>
+</td>
+<td style="height: 18px; width: 60.4552%; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span style="text-transform: lowercase;" th:text="${pdf6Entry.injpermanentDiability}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 36px;" rowspan="2">41</td>
+<td style="width: 95.968%; height: 18px;" colspan="6"><strong>Details of the family of the Injured</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; text-align: center; width: 35.5128%;" colspan="2">Name</td>
+<td style="height: 18px; text-align: center; width: 21.3016%;" colspan="2">Age / DOB</td>
+<td style="width: 19.6365%; height: 18px; text-align: center;">Gender</td>
+<td style="width: 19.5171%; height: 18px; text-align: center;">Relation</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; text-align: center; height: 18px;">i.</td>
+<td style="text-align: center; height: 18px; width: 35.5128%; text-transform: capitalize;" colspan="2"><span style="text-transform: lowercase;" th:text="${pdf6Entry.injLegalRepName}"></span></td>
+<td style="text-align: center; height: 18px; width: 21.3016%; text-transform: capitalize;" colspan="2"><span th:text="${pdf6Entry.injLegalRepAge}"></span></td>
+<td style="width: 19.6365%; text-align: center; height: 18px; text-transform: capitalize;"><span style="text-transform: lowercase;" th:text="${pdf6Entry.injLegalRepGender}"></span></td>
+<td style="width: 19.5171%; text-align: center; height: 18px; text-transform: capitalize;"><span style="text-transform: lowercase;" th:text="${pdf6Entry.injLegalRepRelation}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 36px;" rowspan="2">42</td>
+<td style="width: 95.968%; height: 18px;" colspan="6"><strong>In case of children below the age of 18 years</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 20.7524%; height: 18px; text-align: center;">Name of Child</td>
+<td style="height: 18px; text-align: center; width: 36.062%;" colspan="3">Details of school and class of the child</td>
+<td style="width: 19.6365%; height: 18px; text-align: center;">Annual School fee</td>
+<td style="width: 19.5171%; height: 18px; text-align: center;">Approximate expenditure of the child</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; text-align: center; height: 18px;">i.</td>
+<td style="width: 20.7524%; text-align: center; height: 18px; text-transform: capitalize;"> <span style="text-transform: lowercase;" th:text="${pdf6Entry.nameOfChild}"></span> </td>
+<td style="text-align: center; height: 18px; width: 36.062%; text-transform: capitalize;" colspan="3"><span style="text-transform: lowercase;" th:text="${pdf6Entry.DetailsOfSchool}"></span></td>
+<td style="width: 19.6365%; text-align: center; height: 18px; text-transform: capitalize;"> <span th:text="${pdf6Entry.annualSchoolFee}"></span> </td>
+<td style="width: 19.5171%; text-align: center; height: 18px; text-transform: capitalize;"> <!-- <span th:text="${pdf6Entry.approxExpenditure}"></span> --> </td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 24px;">43</td>
+<td style="width: 95.968%; height: 24px;" colspan="6"><strong>Pecuniary Losses suffered</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px; text-align: center;">i.</td>
+<td style="width: 35.5128%; height: 18px;" colspan="2">Expenditure on treatment</td>
+<td style="width: 60.4552%; height: 18px; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span th:text="${pdf6Entry.expenditureOnTreatment}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px; text-align: center;">ii.</td>
+<td style="width: 35.5128%; height: 18px;" colspan="2">If treatment is still continuing, give the estimate of expenditure likely to be incurred on future treatment</td>
+<td style="width: 60.4552%; height: 18px; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span th:text="${pdf6Entry.treatmentStillContinuing}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px; text-align: center;">iii.</td>
+<td style="width: 35.5128%; height: 18px;" colspan="2">Expenditure on conveyance, special diet, attendant charges etc.</td>
+<td style="width: 60.4552%; height: 18px; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span th:text="${pdf6Entry.expenditureOnConveyance}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px; text-align: center;">iv.</td>
+<td style="width: 35.5128%; height: 18px;" colspan="2">Loss of income</td>
+<td style="width: 60.4552%; height: 18px; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span th:text="${pdf6Entry.lossOfIncome}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px; text-align: center;">v.</td>
+<td style="width: 35.5128%; height: 18px;" colspan="2">Loss of earning capacity</td>
+<td style="width: 60.4552%; height: 18px; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<!-- <span th:text="${pdf6Entry.lossOfearningCapacity}"></span> --></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px; text-align: center;">vi.</td>
+<td style="width: 35.5128%; height: 18px;" colspan="2">Any other pecuniary loss/damage</td>
+<td style="width: 60.4552%; height: 18px; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span th:text="${pdf6Entry.otherPecuniaryLoss}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">
+<p>44.</p>
+</td>
+<td style="width: 35.5128%; height: 18px;" colspan="2">
+<p>Whether the injured got reimbursement of medical expenses from his employer or under a Mediclaim policy or under any government cashless treatment scheme or government insurance scheme</p>
+<p>If yes, provide details</p>
+</td>
+<td style="width: 60.4552%; height: 18px; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span th:text="${pdf6Entry.injuredReimbursement}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">45</td>
+<td style="height: 18px; width: 35.5128%;" colspan="2">Value of loss/ damage to the property</td>
+<td style="height: 18px; width: 60.4552%; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span th:text="${pdf6Entry.lossDamageToProperty}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">46</td>
+<td style="height: 18px; width: 35.5128%;" colspan="2">Any additional information</td>
+<td style="height: 18px; width: 60.4552%; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span th:text="${pdf6Entry.additionalInfo}"></span></td>
+</tr>
+<tr style="height: 36px;">
+<td style="width: 3.3368%; height: 36px;">47</td>
+<td style="height: 36px; width: 35.5128%;" colspan="2">Brief description of the accident</td>
+<td style="height: 36px; width: 60.4552%; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<!-- <span th:text="${pdf6Entry.briefDescriptionOfAccident}"></span> --></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 3.3368%; height: 18px;">48</td>
+<td style="width: 35.5128%; height: 18px;" colspan="2">Compensation claimed</td>
+<td style="width: 60.4552%; height: 18px; text-transform: capitalize;" colspan="4">&nbsp;&nbsp;<span th:text="${pdf6Entry.compensationClaimed}"></span></td>
+</tr>
+</tbody>
+</table>
+<table style="border-collapse: collapse; width: 99.0712%; height: 651px; margin-left: auto; margin-right: auto; " border="0">
+<tbody>
+<tr>
+<td style="width: 100%;">
+<p>Documents submitted</p>
+<span th:if="${pdf6Entry.injurySeverity == '1'}" >
+<p><strong>In Death Cases: </strong></p>
+<ol>
+<li>Death certificate</li>
+<li>Proof of age of the deceased which may be in form of (a) Birth Certificate; (b) School Certificate; (c)</li>
+</ol>
+<p>Certificate from Gram Panchayat (in case of illiterate); (d) Aadhar Card etc.</p>
+<ol start="3">
+<li>Proof of Occupation and Income of the deceased which may be in form of (a) Pay slip/salary certificate</li>
+</ol>
+<p>(salaried employee) (b) Bank statements of the last six months (c) Income tax Returns for last three years (d)</p>
+<p>Balance Sheet, etc.</p>
+<ol start="4">
+<li>Proof of the legal representatives of the deceased such as ration card, passport etc.</li>
+<li>In case of legal heirs below the age of 18, copy of school ID, proof of school fee, proof of other</li>
+</ol>
+<p>expenses/expenditure of the children.</p>
+<ol start="6">
+<li>Treatment record, medical bills and other expenditure prior to death</li>
+<li>Bank Account no. of the legal representatives of the deceased near the place of their residence with name and</li>
+</ol>
+<p>address of the bank along with the necessary endorsement</p>
+<ol start="8">
+<li>Proof of reimbursement of medical expenses by employer or under a Mediclaim policy, if taken</li>
+<li>Any other document</li>
+</ol>
+</span>
+
+<span th:unless="${pdf6Entry.injurySeverity == '1'}" >
+<p><strong>In Injury Cases: </strong></p>
+<ol>
+<li>Multi angle photographs of the injured</li>
+</ol>
+<ol start="2">
+<li>Proof of age of the injured which may be in form of (a) Birth Certificate; (b) School Certificate; (c) Certificate</li>
+</ol>
+<p>from Gram Panchayat (in case of illiterate); (d) Aadhar Card etc.</p>
+<ol start="3">
+<li>Proof of Occupation and Income of the injured which may be in form of (a) Pay slip/salary certificate (salaried</li>
+</ol>
+<p>employee) (b) Bank statements of the last six months (c) Income tax Returns for the last three years (d) Balance</p>
+<p>Sheet, etc.</p>
+<ol start="4">
+<li>Treatment record, medical bills and other expenditure. In case of continuing treatment give proof of future</li>
+</ol>
+<p>medical expenditure.</p>
+<ol start="5">
+<li>Proof of absence from work where loss of income on account of injury is being claimed, which may be in the</li>
+</ol>
+<p>form of (a) Certificate from the employer; (b) Extracts from the attendance register.</p>
+<ol start="6">
+<li>In case of legal heirs below the age of 18, copy of school ID, proof of school fee, proof of other</li>
+</ol>
+<p>expenses/expenditure of the children</p>
+<ol start="7">
+<li>Bank Account no. of the injured near the place of his residence with name and address of the bank along with</li>
+</ol>
+<p>the necessary endorsement</p>
+<ol start="8">
+<li>Proof of reimbursement of medical expenses by employer or under a Mediclaim policy, if taken</li>
+<li>Any other document</li>
+</ol>
+</span>
+<p>Verification:</p>
+<p>Verified at _____________on this _______ day of_____________ that the contents of the above Form are true to my</p>
+<p>knowledge and the documents attached are true copies of the originals</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table style="border-collapse: collapse; width: 100%; height: 108px;" border="1">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 4.60725%; text-align: center; height: 18px;" colspan="4">Name and signature of the injured/legal representative of deceased</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.60725%; height: 18px;">S.NO</td>
+<td style="width: 41.1632%; text-align: center; height: 18px;">Name</td>
+<td style="width: 17.7492%; text-align: center; height: 18px;">Signature&nbsp;</td>
+<td style="width: 36.4804%; text-align: center; height: 18px;">Photograph</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.60725%; height: 18px;">&nbsp;</td>
+<td style="width: 41.1632%; height: 18px;">&nbsp;</td>
+<td style="width: 17.7492%; height: 18px;">&nbsp;</td>
+<td style="width: 36.4804%; height: 18px;">&nbsp;</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.60725%; height: 18px;">&nbsp;</td>
+<td style="width: 41.1632%; height: 18px;">&nbsp;</td>
+<td style="width: 17.7492%; height: 18px;">&nbsp;</td>
+<td style="width: 36.4804%; height: 18px;">&nbsp;</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.60725%; height: 18px;">&nbsp;</td>
+<td style="width: 41.1632%; height: 18px;">&nbsp;</td>
+<td style="width: 17.7492%; height: 18px;">&nbsp;</td>
+<td style="width: 36.4804%; height: 18px;">&nbsp;</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 4.60725%; height: 18px;">&nbsp;</td>
+<td style="width: 41.1632%; height: 18px;">&nbsp;</td>
+<td style="width: 17.7492%; height: 18px;">&nbsp;</td>
+<td style="width: 36.4804%; height: 18px;">&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 4.60725%;">&nbsp;</td>
+<td style="width: 41.1632%;">&nbsp;</td>
+<td style="width: 17.7492%;">&nbsp;</td>
+<td style="width: 36.4804%;">&nbsp;</td>
+</tr>
+<tr>
+<td style="width: 4.60725%;">&nbsp;</td>
+<td style="width: 41.1632%;">&nbsp;</td>
+<td style="width: 17.7492%;">&nbsp;</td>
+<td style="width: 36.4804%;">&nbsp;</td>
+</tr>
+</tbody>
+<div class="footer">
+e-DAR  Detailed Accident Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Dated of Generation&nbsp;<span th:text="${pdf6Entry.currentDate}"></span>
+  </div>
+</table>
+<table style="border-collapse: collapse; width: 100%; height: 109px;" border="0">
+<tbody>
+<tr style="height: 18px;">
+<td style="width: 100%; height: 18px;text-align: right;" colspan="10"></td>
+</tr>
+<!-- <tr style="height: 18px;">
+<td style="width: 10%; height: 18px;text-align: right;" colspan="10">&nbsp;</td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px;" colspan="10">&nbsp;</td>
+</tr> -->
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px; text-align:right" colspan="8"><strong>&nbsp;Signature&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;" colspan="2"></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px; text-align:right" colspan="8"><strong>&nbsp;Name&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;" colspan="2"><span th:text="${pdf6Entry.shoName}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px; text-align:right" colspan="8"><strong>&nbsp;Designation&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;" colspan="2"><span th:text="${pdf6Entry.shoDesignation}"></span>&nbsp;&nbsp;<strong>(S.H.O./I.O)</strong></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width:10%; height: 18px;text-align: right;" colspan="8"><strong>P.I.S./EMPLOYEE No&nbsp;:</strong></td>
+<td style="width:10%; height: 18px;" colspan="2"><span th:text="${pdf6Entry.investigatingOfficerPis}"></span></td>
+</tr>
+<tr style="height: 19px;">
+<td style="width: 10%; height: 19px;text-align: right;"colspan="8"><strong>Phone No.&nbsp;:</strong></td>
+<td style="width: 10%; height: 19px;" colspan="2"><span th:text="${pdf6Entry.investigatingOfficerMobile}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%; height: 18px;text-align: right;" colspan="8"><strong>P.S.&nbsp;:</strong></td>
+<td style="width: 10%; height: 18px;" colspan="2"><span th:text="${pdf6Entry.psName}"></span></td>
+</tr>
+<tr style="height: 18px;">
+<td style="width: 10%;text-align: right;" colspan="8"><strong>Date&nbsp;:</strong></td>
+<td style="width: 10%;" colspan="2"><span th:text="${pdf6Entry.currentDate}"></span></td>
+</tr>
+</tbody>
+</table>
+
+</body>
+</html>
